@@ -2,7 +2,7 @@
 #                                                                      #
 # David Fuller                                                         #
 #                                                                      #
-# GeneratedText class for my Path of Exile Loot Filter.                #
+# GeneratedText class for my Path of Exile Loot Filter Creator.        #
 #                                                                      #
 # Created on 2016-11-13                                                #
 #                                                                      #

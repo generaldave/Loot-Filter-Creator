@@ -2,7 +2,7 @@
 #                                                                      #
 # David Fuller                                                         #
 #                                                                      #
-# Loot Filter Creator for Path of Exile                                #
+# FileHandler class for my Path of Exile Loot Filter Creator.          #
 #                                                                      #
 # Created on 2016-11-13                                                #
 #                                                                      #

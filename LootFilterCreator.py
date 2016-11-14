@@ -19,6 +19,7 @@ from tkinter       import *   # For GUI
 from GeneratedText import *   # Loot filter description, headings, etc
 from Variables     import *   # Variables file
 from FileHandler   import *   # Save Loot Filter
+from Block         import *   # Loot filter blocks
 
 #######################################################################
 #                                                                     #
@@ -122,6 +123,8 @@ class LootFilterCreator(object):
         # Insert description in editArea
         self.editAreaInsert(description.getText())
 
+        popup = Block("Fishing Rods")
+
         # Insert headings and rules in editArea
         for i in range(1, len(headings)):
             # Heading string
@@ -134,6 +137,8 @@ class LootFilterCreator(object):
 
             comment = GeneratedText()
             comment.createComment("Quest Items")
+
+            
 
             # Show Filter preview
             self.editAreaInsert(headingsArray[i].getText())
