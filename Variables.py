@@ -49,3 +49,9 @@ headings.append("Helmets")                     # 34
 headings.append("Belts")                       # 35
 headings.append("Amulets")                     # 36
 headings.append("Rings")                       # 37
+
+rarities = []
+rarities.append("Unique")
+rarities.append("Rare")
+rarities.append("Magic")
+rarities.append("normal")

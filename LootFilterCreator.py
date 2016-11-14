@@ -63,10 +63,11 @@ class LootFilterCreator(object):
         self.rightFrame = Frame(parent)
 
         # Create Left GUI Widgets
-        checkButtonsArray = []
+        self.checkButtonsArray = []
         for i in range(0, len(headings)):
-            checkButtonsArray.append(Checkbutton(self.leftFrame, \
-                                     text = headings[i]))
+            self.checkButtonsArray.append(Checkbutton(self.leftFrame, \
+                                          text = headings[i], \
+                                          state = DISABLED))
 
         # Create Righg GUI Widgets
         self.scrollbar = Scrollbar(self.rightFrame)
@@ -89,7 +90,7 @@ class LootFilterCreator(object):
 
         # Place Left GUI Widgets
         for i in range(1, len(headings)):
-            checkButtonsArray[i].pack(anchor = W)
+            self.checkButtonsArray[i].pack(anchor = W)
 
         # Place Right GUI Widgets
         self.scrollbar.pack(side = RIGHT, fill = Y)
@@ -136,6 +137,11 @@ class LootFilterCreator(object):
             # Create Blocks
             popup = Block(headings[i], dynamic)
             block = popup.createBlock(i)
+            # Pause main form until block is closed
+            popup.wait_window()
+
+            # Check appropriate box, showing class completion
+            self.checkButtonsArray[i].select()
 
             # Show Filter preview
             self.editAreaInsert(headingsArray[i].getText())
