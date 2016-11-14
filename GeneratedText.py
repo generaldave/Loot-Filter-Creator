@@ -102,4 +102,4 @@ class GeneratedText(object):
 
     # Method creates and returns a comment
     def createComment(self, comment):
-        self.text =  "# " + comment + "\n"
+        self.text =  "# " + comment.lstrip() + "\n"

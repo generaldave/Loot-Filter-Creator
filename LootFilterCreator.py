@@ -69,7 +69,7 @@ class LootFilterCreator(object):
                                           text = headings[i], \
                                           state = DISABLED))
 
-        # Create Righg GUI Widgets
+        # Create Right GUI Widgets
         self.scrollbar = Scrollbar(self.rightFrame)
         self.editArea = Text(self.rightFrame, \
                         width = 82,
@@ -86,7 +86,7 @@ class LootFilterCreator(object):
 
         # Place GUI Frames
         self.leftFrame.pack(side = LEFT, padx = 5)
-        self.rightFrame.pack(side = LEFT, padx = 5)
+        self.rightFrame.pack(side = RIGHT, padx = 5)
 
         # Place Left GUI Widgets
         for i in range(1, len(headings)):

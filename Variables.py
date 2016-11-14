@@ -51,6 +51,7 @@ headings.append("Amulets")                     # 36
 headings.append("Rings")                       # 37
 
 rarities = []
+rarities.append("All")
 rarities.append("Unique")
 rarities.append("Rare")
 rarities.append("Magic")
