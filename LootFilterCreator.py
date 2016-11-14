@@ -135,10 +135,9 @@ class LootFilterCreator(object):
             headingsArray.append(text)
 
             # Create Blocks
-            popup = Block(headings[i], dynamic)
-            block = popup.createBlock(i)
-            # Pause main form until block is closed
-            popup.wait_window()
+            popup = Block(headings[i], i, dynamic)
+            popup.wait_window()   # Pause until complete
+            block = popup.getText()
 
             # Check appropriate box, showing class completion
             self.checkButtonsArray[i].select()

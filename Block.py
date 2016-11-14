@@ -25,24 +25,29 @@ from GeneratedText import *   # For comment lines
 ########################################################################
 
 class Block(Toplevel):
-    def __init__(self, title, dynamic):
+    def __init__(self, title, index, dynamic):
         # Set up GUI
         Toplevel.__init__(self)
         self.title(title)
         self.geometry("400x400")
+
+        self.index= index
 
         # Create GUI Frames
         self.leftFrame = Frame(self)
         self.rightFrame = Frame(self)
 
         # Create Rarity options menu (Left Frame)
-        self.var = StringVar()
-        self.var.set(rarities[0])
-        rarityMenu = OptionMenu(self.leftFrame, self.var, *rarities)
+        self.rarityText = StringVar()
+        self.rarityText.set(rarities[0])
+        rarityMenu = OptionMenu(self.leftFrame, \
+                                self.rarityText, \
+                                *rarities, \
+                                command = self.rarityUpdate)
 
         # Create Text Preview (Right Frame)
-        self.previewText = StringVar()
-        self.previewText.set("test")
+        self.previewText = StringVar(self)
+        self.previewText.set("")
         self.preview = Entry(self.rightFrame, \
                              textvariable = self.previewText)
 
@@ -56,19 +61,31 @@ class Block(Toplevel):
         # Place Right Frame GUI Widgets
         self.preview.pack()
 
-    def createBlock(self, index):
         # Set preview text
         self.previewText.set(headings[index].lstrip())
 
         # Create comment
-        comment = GeneratedText()
-        comment.createComment(headings[index])
+        self.comment = GeneratedText()
+        self.comment.createComment(headings[index])
 
-        # Create Block text
-        blockText = comment.getText()        + "\n" + \
-                    "Show"                   + "\n" + \
-                    "    Class \""                  + \
-                    headings[index].lstrip() + "\"" + "\n"
+        # Call method to create Block text
+        self.createBlockText()
 
-        # Return Block text  
-        return blockText
+    # Method returns text
+    def getText(self):
+        return self.text
+
+    # Method updates rarity selected
+    def rarityUpdate(self, value):
+        self.rarityText.set(value)
+
+        # Call method to create Block text
+        self.createBlockText()
+
+    # Method creates Block text
+    def createBlockText(self):
+        self.text = self.comment.getText()        + "\n"  + \
+                    "Show"                        + "\n"  + \
+                    "    Class \""                        + \
+                    headings[self.index].lstrip() + "\""  + "\n" + \
+                    "    Rarity " + self.rarityText.get() + "\n"
