@@ -15,6 +15,7 @@
 ########################################################################
 
 from tkinter       import *   # For GUI
+from Variables     import *   # Variables file
 from GeneratedText import *   # For comment lines
 
 ########################################################################
@@ -28,3 +29,11 @@ class Block(Toplevel):
         Toplevel.__init__(self)
         self.title(title)
         self.geometry("400x400")
+
+    def createBlock(self, index):
+        self.wait_window()
+
+        comment = GeneratedText()
+        comment.createComment(headings[index])
+            
+        return comment.getText()

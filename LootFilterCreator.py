@@ -123,8 +123,6 @@ class LootFilterCreator(object):
         # Insert description in editArea
         self.editAreaInsert(description.getText())
 
-        popup = Block("Fishing Rods")
-
         # Insert headings and rules in editArea
         for i in range(1, len(headings)):
             # Heading string
@@ -135,14 +133,13 @@ class LootFilterCreator(object):
             text.createHeading(string.upper())
             headingsArray.append(text)
 
-            comment = GeneratedText()
-            comment.createComment("Quest Items")
-
-            
+            # Create Blocks
+            popup = Block(headings[i])
+            block = popup.createBlock(i)
 
             # Show Filter preview
             self.editAreaInsert(headingsArray[i].getText())
-            self.editAreaInsert(comment.getText())
+            self.editAreaInsert(block)
 
 #######################################################################
 #                                                                     #
