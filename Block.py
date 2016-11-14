@@ -25,7 +25,7 @@ from GeneratedText import *   # For comment lines
 ########################################################################
 
 class Block(Toplevel):
-    def __init__(self, title):
+    def __init__(self, title, dynamic):
         Toplevel.__init__(self)
         self.title(title)
         self.geometry("400x400")

@@ -134,7 +134,7 @@ class LootFilterCreator(object):
             headingsArray.append(text)
 
             # Create Blocks
-            popup = Block(headings[i])
+            popup = Block(headings[i], dynamic)
             block = popup.createBlock(i)
 
             # Show Filter preview
