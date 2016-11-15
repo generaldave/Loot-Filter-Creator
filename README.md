@@ -16,8 +16,8 @@ This app is still under construction. Layout is not concrete.
 
 Todo:
 
-  Work on commenting.
-  Include Item Level, Drop Level, Quality,  BaseType, Socket, Height, and Weight options
-  Inclued Alert Sound action
-  Be able to decide Show/Hide
-  Drop the Dynamic option - Item Level and Drop Level for all
+Work on commenting.
+Include Item Level, Drop Level, Quality,  BaseType, Socket, Height, and Weight options.
+Inclued Alert Sound action.
+Be able to decide Show/Hide.
+Drop the Dynamic option - Item Level and Drop Level for all.
