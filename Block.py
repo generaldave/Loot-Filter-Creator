@@ -109,7 +109,7 @@ class Block(Toplevel):
         self.scrollbar = Scrollbar(self.rightFrame)
         self.editArea = Text(self.rightFrame, \
                         width = 39,
-                        height = 15, \
+                        height = 17, \
                         wrap = "word", \
                         yscrollcommand = self.scrollbar.set, \
                         borderwidth = 1)
