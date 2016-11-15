@@ -10,6 +10,6 @@ The name of the file can either be changed in file explorer after created or in 
 
 User can currently change rarity, text size, text colour, border colour, and background colour.
 
-![Block Form](https://cloud.githubusercontent.com/assets/7481680/20292726/fe10fc76-aabd-11e6-9895-2a24d3e252ec.png)
+![block](https://cloud.githubusercontent.com/assets/7481680/20327149/e5592f4a-ab59-11e6-939a-55392f0568b1.png)
 
 This app is still under construction. Layout is not concrete.
