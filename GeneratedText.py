@@ -15,7 +15,8 @@
 #                                                                      #
 ########################################################################
 
-from datetime import date   # For today's date
+from datetime  import date   # For today's date
+from Variables import *      # Variables file
 
 ########################################################################
 #                                                                      #
@@ -29,9 +30,13 @@ class GeneratedText(object):
         self.start = ""
         self.end = ""
 
-    # Return descrtion
+    # Get text
     def getText(self):
         return self.text
+
+    # Set text
+    def setText(self, t):
+        self.text = t
 
     # Returns a 72 character line of # symbols
     def poundLine(self):
@@ -103,3 +108,42 @@ class GeneratedText(object):
     # Method creates and returns a comment
     def createComment(self, comment):
         self.text =  "# " + comment.lstrip() + "\n"
+
+    # Method creates Block text
+    def createBlockText(self, index, rarityText, fontSize, \
+                        textColor, borderColor, bgColor):
+        #self.text = ""
+        # Show Class
+        self.text = "Show"                        + "\n"  + \
+                    "    Class \""                        + \
+                    headings[index].lstrip() + "\""  + "\n"
+
+        # Rarity
+        if (rarityText.get() != "All"):
+            self.text = self.text + \
+                    "    Rarity " + rarityText.get() + "\n"
+
+        # Font Size
+        self.text = self.text + \
+                    "    SetFontSize " + str(fontSize)    + "\n"
+
+        # Text Color
+        self.text = self.text                    + \
+                    "    SetTextColor "          + \
+                    str(int(textColor[0])) + " " + \
+                    str(int(textColor[1])) + " " + \
+                    str(int(textColor[2])) + "\n"
+
+        # Border Color
+        self.text = self.text                     + \
+                    "    SetBorderColor "         + \
+                    str(int(borderColor[0])) + " " + \
+                    str(int(borderColor[1])) + " " + \
+                    str(int(borderColor[2])) + "\n"
+
+        # Background Color
+        self.text = self.text                       + \
+                    "    SetBackgroundColor "       + \
+                    str(int(bgColor[0])) + " " + \
+                    str(int(bgColor[1])) + " " + \
+                    str(int(bgColor[2])) + "\n"
