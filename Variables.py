@@ -10,6 +10,8 @@
 
 FILTER_NAME = "loot.filter"
 
+DEFAULT_FONT = 32
+
 headings = []
 headings.append(None)                          # 0
 headings.append(" Fishing Rods")               # 1
@@ -56,3 +58,34 @@ rarities.append("Unique")
 rarities.append("Rare")
 rarities.append("Magic")
 rarities.append("normal")
+
+fontSizes = []
+fontSizes.append(18)
+fontSizes.append(19)
+fontSizes.append(20)
+fontSizes.append(21)
+fontSizes.append(22)
+fontSizes.append(23)
+fontSizes.append(24)
+fontSizes.append(25)
+fontSizes.append(26)
+fontSizes.append(27)
+fontSizes.append(28)
+fontSizes.append(29)
+fontSizes.append(30)
+fontSizes.append(31)
+fontSizes.append(32)
+fontSizes.append(33)
+fontSizes.append(34)
+fontSizes.append(35)
+fontSizes.append(36)
+fontSizes.append(37)
+fontSizes.append(38)
+fontSizes.append(39)
+fontSizes.append(40)
+fontSizes.append(41)
+fontSizes.append(42)
+fontSizes.append(43)
+fontSizes.append(44)
+fontSizes.append(45)
+

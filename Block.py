@@ -14,9 +14,10 @@
 #                                                                      #
 ########################################################################
 
-from tkinter       import *   # For GUI
-from Variables     import *   # Variables file
-from GeneratedText import *   # For comment lines
+from tkinter              import *   # For GUI
+from Variables            import *   # Variables file
+from GeneratedText        import *   # For comment lines
+from tkinter.colorchooser import *   # For choosing colours
 
 ########################################################################
 #                                                                      #
@@ -28,18 +29,26 @@ class Block(Toplevel):
     def __init__(self, title, index, dynamic):
         # Variables
         self.index = index
+        self.font = font.Font(family = "Helvetica",  size = 12)
+        self.fontSize = DEFAULT_FONT
+        self.textColor = (0, 0, 0)
+        self.bgColor = (0, 0, 0)
+        self.borderColor = (0, 0, 0)
         
         # Set up GUI
         Toplevel.__init__(self)
         self.setupGUI(title)
 
         # Call method to create Block text
-        self.createBlockText()
+        self.createBlockText(False)
+
+        # Call method to preview text
+        self.editAreaInsert()
 
     # Method sets up GUI
     def setupGUI(self, title):
         self.title(title)
-        self.geometry("400x400")
+        self.geometry("425x400")
 
         # Create GUI Frames
         self.leftFrame = Frame(self)
@@ -52,13 +61,28 @@ class Block(Toplevel):
                           self.rarityText, \
                           *rarities, \
                           command = self.rarityUpdate)
+        self.fontSizeText = StringVar()
+        self.fontSizeText.set(str(self.fontSize))
+        self.fontSizeMenu = OptionMenu(self.leftFrame, \
+                                       self.fontSizeText, \
+                                       *fontSizes, \
+                                       command = self.fontSizeUpdate)
+        self.textColorButton = Button(self.leftFrame, \
+                                      text = "Text Colour", \
+                                      command = self.setTextColor)
+        self.bgColorButton = Button(self.leftFrame, \
+                                    text = "Background Colour", \
+                                    command = self.setBGColor)
+        self.borderColorButton = Button(self.leftFrame, \
+                                        text = "Border Colour", \
+                                        command = self.setBorderColor)
 
         # Create Right GUI Widgets
         self.previewText = StringVar(self)
         self.previewText.set("")
         self.preview = Entry(self.rightFrame, \
-                             width = 39, \
-                             font = "Helvetica 20", \
+                             width = 0, \
+                             font = self.font, \
                              justify = "center", \
                              textvariable = self.previewText)
 
@@ -77,6 +101,10 @@ class Block(Toplevel):
 
         # Place Left Frame GUI Widgets
         self.rarityMenu.pack()
+        self.fontSizeMenu.pack()
+        self.textColorButton.pack()
+        self.borderColorButton.pack()
+        self.bgColorButton.pack()
 
         # Place Right Frame GUI Widgets
         self.preview.pack(side = TOP, anchor = W)
@@ -88,37 +116,144 @@ class Block(Toplevel):
 
         # Create comment
         self.comment = GeneratedText()
-        self.comment.createComment(headings[self.index])
+        self.comment.createComment(headings[self.index])        
 
     # Method returns text
     def getText(self):
         return self.text
+
+    # Method shows preview code
+    def editAreaInsert(self):
+        self.editArea.delete(1.0, END)
+        self.editArea.insert(INSERT, self.text)
+
+    # Method decides font size
+    def decideFontSize(self, sizeIn):
+        if (sizeIn == 18 or sizeIn == 19):
+            return 8
+        if (sizeIn == 20 or sizeIn == 21 or \
+            sizeIn == 22 or sizeIn == 23):
+            return 9
+        if (sizeIn == 24 or sizeIn ==25 or \
+            sizeIn == 26):
+            return 10
+        if (sizeIn == 27 or sizeIn == 28 or \
+            sizeIn == 29):
+            return 11
+        if (sizeIn == 30 or sizeIn == 31 or \
+            sizeIn == 32 or sizeIn == 33):
+            return 12
+        if (sizeIn == 34 or sizeIn == 35 or \
+            sizeIn == 36):
+            return 13
+        if (sizeIn == 37 or sizeIn == 38 or \
+            sizeIn == 39):
+            return 14
+        if (sizeIn == 40 or sizeIn == 41 or \
+            sizeIn == 42 or sizeIn == 43):
+            return 15
+        if (sizeIn == 44 or sizeIn ==45):
+            return 16
+        return 0   # This suggests an error
+
+    # Method sets border colour
+    def setBorderColor(self):
+        color = askcolor()
+        self.preview.config(highlightbackground = color[1])   # hex color
+        self.borderColor = color[0]              # rgb color
+
+        # Call method to create Block text
+        self.createBlockText(False)
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method sets background colour
+    def setBGColor(self):
+        color = askcolor()
+        self.preview.config(bg = color[1])   # hex color
+        self.bgColor = color[0]              # rgb color
+
+        # Call method to create Block text
+        self.createBlockText(False)
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method sets text colour
+    def setTextColor(self):
+        color = askcolor()
+        self.preview.config(fg = color[1])   # hex color
+        self.textColor = color[0]            # rgb color
+
+        # Call method to create Block text
+        self.createBlockText(False)
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method updates font size
+    def fontSizeUpdate(self, value):
+        self.fontSize = value
+        self.font.config(size = str(self.decideFontSize(value)))
+        self.preview.config(font = self.font)
+
+        # Call method to create Block text
+        self.createBlockText(False)
+
+        # Call method to preview text
+        self.editAreaInsert()
 
     # Method updates rarity selected
     def rarityUpdate(self, value):
         self.rarityText.set(value)
 
         # Call method to create Block text
-        self.createBlockText()
+        self.createBlockText(False)
+
+        # Call method to preview text
+        self.editAreaInsert()
 
     # Method creates Block text
-    def createBlockText(self):
-        self.text = self.comment.getText()        + \
-                    "Show"                        + "\n"  + \
-                    "    Class \""                        + \
-                    headings[self.index].lstrip() + "\""  + "\n"
-        if (self.rarityText.get() != "All"):
-            self.text = self.text + \
-                    "    Rarity " + self.rarityText.get() + "\n"
-
-    # Method appends to Block text
-    def appendBlockText(self):
+    def createBlockText(self, append):
+        if (not append):
+            self.text = ""
+            
+        # Show Class
         self.text = self.text + "\n" + \
                     self.comment.getText()        + \
                     "Show"                        + "\n"  + \
                     "    Class \""                        + \
                     headings[self.index].lstrip() + "\""  + "\n"
+
+        # Rarity
         if (self.rarityText.get() != "All"):
             self.text = self.text + \
                     "    Rarity " + self.rarityText.get() + "\n"
+
+        # Font Size
+        self.text = self.text + \
+                    "    SetFontSize " + str(self.fontSize)    + "\n"
+
+        # Text Color
+        self.text = self.text                   + \
+                    "    SetTextColor "         + \
+                    str(int(self.textColor[0])) + " " + \
+                    str(int(self.textColor[1])) + " " + \
+                    str(int(self.textColor[2])) + "\n"
+
+        # Border Color
+        self.text = self.text                     + \
+                    "    SetBorderColor "         + \
+                    str(int(self.borderColor[0])) + " " + \
+                    str(int(self.borderColor[1])) + " " + \
+                    str(int(self.borderColor[2])) + "\n"
+
+        # Background Color
+        self.text = self.text                       + \
+                    "    SetBackgroundColor "       + \
+                    str(int(self.bgColor[0])) + " " + \
+                    str(int(self.bgColor[1])) + " " + \
+                    str(int(self.bgColor[2])) + "\n"
+
 
