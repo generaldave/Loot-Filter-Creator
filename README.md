@@ -13,3 +13,11 @@ User can currently change rarity, text size, text colour, border colour, and bac
 ![block](https://cloud.githubusercontent.com/assets/7481680/20327149/e5592f4a-ab59-11e6-939a-55392f0568b1.png)
 
 This app is still under construction. Layout is not concrete.
+
+Todo:
+
+  Work on commenting.
+  Include Item Level, Drop Level, Quality,  BaseType, Socket, Height, and Weight options
+  Inclued Alert Sound action
+  Be able to decide Show/Hide
+  Drop the Dynamic option - Item Level and Drop Level for all
