@@ -34,6 +34,7 @@ class Block(Toplevel):
         self.textColor   = (0, 0, 0)
         self.bgColor     = (0, 0, 0)
         self.borderColor = (0, 0, 0)
+        self.textArray = []
         
         # Set up GUI
         Toplevel.__init__(self)
@@ -44,7 +45,7 @@ class Block(Toplevel):
         self.comment.createComment(headings[self.index])
 
         # Call method to create Block text
-        self.createBlockText(False)
+        self.createBlockText()
 
         # Call method to preview text
         self.editAreaInsert()
@@ -80,6 +81,18 @@ class Block(Toplevel):
         self.borderColorButton = Button(self.leftFrame, \
                                         text = "Border Colour", \
                                         command = self.setBorderColor)
+        self.emptySpace = Button(self.leftFrame, \
+                                 state = "disabled", \
+                                 borderwidth = 0)
+        self.emptySpace2 = Button(self.leftFrame, \
+                                 state = "disabled", \
+                                 borderwidth = 0)
+        self.commitButton = Button(self.leftFrame, \
+                                   text = "Commit", \
+                                   command = self.commitText)
+        self.doneButton = Button(self.leftFrame, \
+                                 text = "Done", \
+                                 command = self.destroy)
 
         # Create Right GUI Widgets
         self.previewText = StringVar(self)
@@ -104,11 +117,15 @@ class Block(Toplevel):
         self.rightFrame.pack(side = RIGHT, padx = 5)
 
         # Place Left Frame GUI Widgets
-        self.rarityMenu.pack()
-        self.fontSizeMenu.pack()
-        self.textColorButton.pack()
-        self.borderColorButton.pack()
-        self.bgColorButton.pack()
+        self.rarityMenu.pack(fill = X)
+        self.fontSizeMenu.pack(fill = X)
+        self.textColorButton.pack(fill = X)
+        self.borderColorButton.pack(fill = X)
+        self.bgColorButton.pack(fill = X)
+        self.emptySpace.pack(fill = X)
+        self.emptySpace2.pack(fill = X)
+        self.commitButton.pack(fill = X)
+        self.doneButton.pack(fill = X)
 
         # Place Right Frame GUI Widgets
         self.preview.pack(side = TOP, anchor = W)
@@ -116,15 +133,42 @@ class Block(Toplevel):
         self.editArea.pack(side = RIGHT, fill = BOTH, expand = True)
 
         # Set preview text
-        self.previewText.set(headings[self.index].lstrip())                
+        self.previewText.set(headings[self.index].lstrip())
 
     # Method returns text
     def getText(self):
-        return self.text
+        return self.textArray
+
+    # Method commits text
+    def commitText(self):
+        self.textArray.append(self.text)
+
+        # Reset defaults
+        self.text = ""
+        self.fontSize    = DEFAULT_FONT
+        self.textColor   = (0, 0, 0)
+        self.bgColor     = (0, 0, 0)
+        self.borderColor = (0, 0, 0)
+
+        self.rarityUpdate(rarities[0])
+        self.fontSizeUpdate(DEFAULT_FONT)
+        self.fontSizeText.set(str(self.fontSize))
+        self.preview.config(fg = "#000000")
+        self.preview.config(bg = "#F0F0ED")
+        self.preview.config(highlightbackground = "#F0F0ED")
+
+        # Call method to create Block text
+        self.createBlockText()
+
+        # Call method to preview text
+        self.editAreaInsert()
 
     # Method shows preview code
     def editAreaInsert(self):
         self.editArea.delete(1.0, END)
+        for text in self.textArray:
+            self.editArea.insert(INSERT, text)
+            self.editArea.insert(INSERT, "\n")
         self.editArea.insert(INSERT, self.text)
 
     # Method decides font size
@@ -163,7 +207,7 @@ class Block(Toplevel):
         self.borderColor = color[0]                           # rgb color
 
         # Call method to create Block text
-        self.createBlockText(False)
+        self.createBlockText()
 
         # Call method to preview text
         self.editAreaInsert()
@@ -175,7 +219,7 @@ class Block(Toplevel):
         self.bgColor = color[0]              # rgb color
 
         # Call method to create Block text
-        self.createBlockText(False)
+        self.createBlockText()
 
         # Call method to preview text
         self.editAreaInsert()
@@ -187,7 +231,7 @@ class Block(Toplevel):
         self.textColor = color[0]            # rgb color
 
         # Call method to create Block text
-        self.createBlockText(False)
+        self.createBlockText()
 
         # Call method to preview text
         self.editAreaInsert()
@@ -199,7 +243,7 @@ class Block(Toplevel):
         self.preview.config(font = self.font)
 
         # Call method to create Block text
-        self.createBlockText(False)
+        self.createBlockText()
 
         # Call method to preview text
         self.editAreaInsert()
@@ -209,16 +253,14 @@ class Block(Toplevel):
         self.rarityText.set(value)
 
         # Call method to create Block text
-        self.createBlockText(False)
+        self.createBlockText()
 
         # Call method to preview text
         self.editAreaInsert()
 
     # Method creates Block text
-    def createBlockText(self, append):
-        if (not append):
-            self.text = ""
-            
+    def createBlockText(self):
+        self.text = ""
         # Show Class
         self.text = self.text + \
                     self.comment.getText()        + \

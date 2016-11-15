@@ -144,7 +144,8 @@ class LootFilterCreator(object):
 
             # Show Filter preview
             self.editAreaInsert(headingsArray[i].getText())
-            self.editAreaInsert(block)
+            for text in block:
+                self.editAreaInsert(text)
 
 #######################################################################
 #                                                                     #
