@@ -28,16 +28,20 @@ from tkinter.colorchooser import *   # For choosing colours
 class Block(Toplevel):
     def __init__(self, title, index, dynamic):
         # Variables
-        self.index = index
-        self.font = font.Font(family = "Helvetica",  size = 12)
-        self.fontSize = DEFAULT_FONT
-        self.textColor = (0, 0, 0)
-        self.bgColor = (0, 0, 0)
+        self.index       = index
+        self.font        = font.Font(family = "Helvetica",  size = 12)
+        self.fontSize    = DEFAULT_FONT
+        self.textColor   = (0, 0, 0)
+        self.bgColor     = (0, 0, 0)
         self.borderColor = (0, 0, 0)
         
         # Set up GUI
         Toplevel.__init__(self)
         self.setupGUI(title)
+
+        # Create comment
+        self.comment = GeneratedText()
+        self.comment.createComment(headings[self.index])
 
         # Call method to create Block text
         self.createBlockText(False)
@@ -51,7 +55,7 @@ class Block(Toplevel):
         self.geometry("425x400")
 
         # Create GUI Frames
-        self.leftFrame = Frame(self)
+        self.leftFrame  = Frame(self)
         self.rightFrame = Frame(self)
 
         # Create Left GUI Widgets
@@ -112,11 +116,7 @@ class Block(Toplevel):
         self.editArea.pack(side = RIGHT, fill = BOTH, expand = True)
 
         # Set preview text
-        self.previewText.set(headings[self.index].lstrip())
-
-        # Create comment
-        self.comment = GeneratedText()
-        self.comment.createComment(headings[self.index])        
+        self.previewText.set(headings[self.index].lstrip())                
 
     # Method returns text
     def getText(self):
@@ -160,7 +160,7 @@ class Block(Toplevel):
     def setBorderColor(self):
         color = askcolor()
         self.preview.config(highlightbackground = color[1])   # hex color
-        self.borderColor = color[0]              # rgb color
+        self.borderColor = color[0]                           # rgb color
 
         # Call method to create Block text
         self.createBlockText(False)
@@ -220,7 +220,7 @@ class Block(Toplevel):
             self.text = ""
             
         # Show Class
-        self.text = self.text + "\n" + \
+        self.text = self.text + \
                     self.comment.getText()        + \
                     "Show"                        + "\n"  + \
                     "    Class \""                        + \
