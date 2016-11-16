@@ -14,10 +14,11 @@
 #                                                                      #
 ########################################################################
 
-from tkinter              import *   # For GUI
-from Variables            import *   # Variables file
-from GeneratedText        import *   # For comment lines
-from tkinter.colorchooser import *   # For choosing colours
+from tkinter              import *      # For GUI
+from tkinter              import font   # For fonts
+from Variables            import *      # Variables file
+from GeneratedText        import *      # For comment lines
+from tkinter.colorchooser import *      # For choosing colours
 
 ########################################################################
 #                                                                      #
