@@ -114,7 +114,7 @@ class Block(Toplevel):
                              font = self.font, \
                              justify = "center", \
                              textvariable = self.previewText, \
-                             highlightthickness = 1, \
+                             highlightthickness = 2, \
                              relief = FLAT)
 
         self.scrollbar = Scrollbar(self.rightFrame)
