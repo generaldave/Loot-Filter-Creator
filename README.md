@@ -18,7 +18,7 @@ Todo:
 
 Work on commenting.
 
-Include Item Level, Drop Level, Quality,  BaseType, Socket, Height, and Weight options.
+Include Item Level, Drop Level, Quality,  BaseType, Sockets, Height, and Width options.
 
 Include Alert Sound action.
 
