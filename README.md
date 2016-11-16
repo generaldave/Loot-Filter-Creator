@@ -22,8 +22,4 @@ Include Item Level, Drop Level, Quality,  BaseType, Sockets, Height, and Width o
 
 Include Alert Sound action.
 
-Be able to decide Show/Hide.
-
-Drop the Dynamic option - Item Level and Drop Level for all.
-
 Appropriate default colours.

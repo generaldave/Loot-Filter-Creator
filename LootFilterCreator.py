@@ -46,17 +46,13 @@ class LootFilterCreator(object):
         # Create File menu
         menubar = Menu(parent)
         fileMenu = Menu(menubar)
+        fileMenu.add_command(label = "New", \
+                             command = self.createFilter)
+        fileMenu.add_separator()
         fileMenu.add_command(label = "Export", \
                              command = self.exportFilter)
         fileMenu.add_separator()
         fileMenu.add_command(label = "Exit", command = parent.destroy)
-
-        # Create Start menu
-        startMenu = Menu(menubar)
-        startMenu.add_command(label = "Dynamic", \
-                              command = lambda: self.createFilter(True))
-        startMenu.add_command(label = "Not", \
-                              command = lambda: self.createFilter(False))
 
         # Create GUI Frames
         self.leftFrame = Frame(parent)
@@ -81,7 +77,6 @@ class LootFilterCreator(object):
 
         # Place File and start menu
         menubar.add_cascade(label = "File", menu = fileMenu)
-        menubar.add_cascade(label = "Start", menu = startMenu)
         parent.config(menu = menubar)
 
         # Place GUI Frames
@@ -110,7 +105,7 @@ class LootFilterCreator(object):
 
     # Method creates filter
     # PRE: dynamic = true or false
-    def createFilter(self,dynamic):
+    def createFilter(self):
         # Array of Heading objects
         headingsArray = []
         headingsArray.append(None)
@@ -135,7 +130,7 @@ class LootFilterCreator(object):
             headingsArray.append(text)
 
             # Create Blocks
-            popup = Block(headings[i], i, dynamic)
+            popup = Block(headings[i], i)
             popup.wait_window()   # Pause until complete
             block = popup.getText()
 

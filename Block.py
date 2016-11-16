@@ -27,37 +27,23 @@ from tkinter.colorchooser import *      # For choosing colours
 ########################################################################
 
 class Block(Toplevel):
-    def __init__(self, title, index, dynamic):
+    def __init__(self, title, index):
         # Variables
         self.index       = index
         self.font        = font.Font(family = "Helvetica",  size = 12)
         self.fontSize    = DEFAULT_FONT
-        self.textColor   = (200, 200, 200)
-        self.bgColor     = (0, 0, 0)
-        self.borderColor = (0, 0, 0)
         self.textArray = []
-        self.text = GeneratedText()
         
         # Set up GUI
         Toplevel.__init__(self)
-        self.setupGUI(title)        
+        self.setupGUI(title)
 
         # Create comment
         self.comment = GeneratedText()
         self.comment.createComment(headings[self.index])
 
-        self.rarityUpdate(rarities[0])
-        self.fontSizeUpdate(DEFAULT_FONT)
-        self.fontSizeText.set(str(self.fontSize))
-        self.preview.config(fg = "#C8C8C8")
-        self.preview.config(bg = "#000000")
-        self.preview.config(highlightbackground = "#000000")
-
-        # Call method to create Block text
-        self.text.createBlockText(self.index, self.rarityText, \
-                                  self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor, \
-                                  self.comment.getText())
+        # Set up defaults
+        self.setDefaults()
 
         # Call method to preview text
         self.editAreaInsert()
@@ -72,6 +58,12 @@ class Block(Toplevel):
         self.rightFrame = Frame(self)
 
         # Create Left GUI Widgets
+        self.showHideText = StringVar()
+        self.showHideText.set(showHide[0])
+        self.showHideMenu = OptionMenu(self.leftFrame, \
+                          self.showHideText, \
+                          *showHide, \
+                          command = self.showHideUpdate)
         self.rarityText = StringVar()
         self.rarityText.set(rarities[0])
         self.rarityMenu = OptionMenu(self.leftFrame, \
@@ -131,6 +123,7 @@ class Block(Toplevel):
         self.rightFrame.pack(side = RIGHT, padx = 5)
 
         # Place Left Frame GUI Widgets
+        self.showHideMenu.pack(fill = X)
         self.rarityMenu.pack(fill = X)
         self.fontSizeMenu.pack(fill = X)
         self.textColorButton.pack(fill = X)
@@ -153,17 +146,14 @@ class Block(Toplevel):
     def getText(self):
         return self.textArray
 
-    # Method commits text
-    def commitText(self):
-        self.textArray.append(self.text.getText())
-
-        # Reset defaults
-        self.text.setText("")
+    # Method sets up defaults
+    def setDefaults(self):
         self.fontSize    = DEFAULT_FONT
         self.textColor   = (200, 200, 200)
         self.bgColor     = (0, 0, 0)
         self.borderColor = (0, 0, 0)
-
+        self.text = GeneratedText()
+        self.text.setText("")
         self.rarityUpdate(rarities[0])
         self.fontSizeUpdate(DEFAULT_FONT)
         self.fontSizeText.set(str(self.fontSize))
@@ -171,23 +161,29 @@ class Block(Toplevel):
         self.preview.config(bg = "#000000")
         self.preview.config(highlightbackground = "#000000")
 
-        # Call method to create Block text
-        self.text.createBlockText(self.index, self.rarityText, \
-                                  self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor, \
-                                  self.comment.getText())
+    # Method commits text
+    def commitText(self):
+        self.textArray.append(self.text.getText())
+
+        # Reset defaults
+        self.setDefaults()
 
         # Call method to preview text
         self.editAreaInsert()
 
     # Method shows preview code
     def editAreaInsert(self):
+        # Call method to create Block text
+        self.text.createBlockText(self.index, self.rarityText, \
+                                  self.fontSize, self.textColor, \
+                                  self.borderColor, self.bgColor, \
+                                  self.comment.getText(), \
+                                  self.showHideText)
+        # Show preview
         self.editArea.delete(1.0, END)
         for text in self.textArray:
-            #self.editArea.insert(INSERT, self.comment.getText())
             self.editArea.insert(INSERT, text)
             self.editArea.insert(INSERT, "\n")
-        #self.editArea.insert(INSERT, self.comment.getText())
         self.editArea.insert(INSERT, self.text.getText())
 
     # Method decides font size
@@ -217,19 +213,13 @@ class Block(Toplevel):
             return 15
         if (sizeIn == 44 or sizeIn ==45):
             return 16
-        return 0   # This suggests an error
+        return 0   # This suggests an error    
 
     # Method sets border colour
     def setBorderColor(self):
         color = askcolor()
         self.preview.config(highlightbackground = color[1])   # hex color
         self.borderColor = color[0]                           # rgb color
-
-        # Call method to create Block text
-        self.text.createBlockText(self.index, self.rarityText, \
-                                  self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor, \
-                                  self.comment.getText())
 
         # Call method to preview text
         self.editAreaInsert()
@@ -240,12 +230,6 @@ class Block(Toplevel):
         self.preview.config(bg = color[1])   # hex color
         self.bgColor = color[0]              # rgb color
 
-        # Call method to create Block text
-        self.text.createBlockText(self.index, self.rarityText, \
-                                  self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor, \
-                                  self.comment.getText())
-
         # Call method to preview text
         self.editAreaInsert()
 
@@ -255,11 +239,12 @@ class Block(Toplevel):
         self.preview.config(fg = color[1])   # hex color
         self.textColor = color[0]            # rgb color
 
-        # Call method to create Block text
-        self.text.createBlockText(self.index, self.rarityText, \
-                                  self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor, \
-                                  self.comment.getText())
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method sets show or hide
+    def showHideUpdate(self, value):
+        self.showHideText.set(value)
 
         # Call method to preview text
         self.editAreaInsert()
@@ -270,24 +255,12 @@ class Block(Toplevel):
         self.font.config(size = str(self.decideFontSize(value)))
         self.preview.config(font = self.font)
 
-        # Call method to create Block text
-        self.text.createBlockText(self.index, self.rarityText, \
-                                  self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor, \
-                                  self.comment.getText())
-
         # Call method to preview text
         self.editAreaInsert()
 
     # Method updates rarity selected
     def rarityUpdate(self, value):
         self.rarityText.set(value)
-
-        # Call method to create Block text
-        self.text.createBlockText(self.index, self.rarityText, \
-                                  self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor, \
-                                  self.comment.getText())
 
         # Call method to preview text
         self.editAreaInsert()

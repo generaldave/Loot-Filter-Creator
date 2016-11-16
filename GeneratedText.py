@@ -112,11 +112,11 @@ class GeneratedText(object):
     # Method creates Block text
     def createBlockText(self, index, rarityText, fontSize, \
                         textColor, borderColor, bgColor, \
-                        comment):
+                        comment, showHide):
         # Show Class
         self.text = comment + "\n" + \
-                    "Show"                   + "\n"  + \
-                    "    Class \""                        + \
+                    showHide.get()           + "\n"  + \
+                    "    Class \""                   + \
                     headings[index].lstrip() + "\""  + "\n"
 
         # Rarity

@@ -89,3 +89,7 @@ fontSizes.append(43)
 fontSizes.append(44)
 fontSizes.append(45)
 
+showHide = []
+showHide.append("Show")
+showHide.append("Hide")
+
