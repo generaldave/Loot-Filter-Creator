@@ -8,10 +8,13 @@
 #                                                                      #
 ########################################################################
 
+# Name for exported loot filter
 FILTER_NAME = "loot.filter"
 
+# Default font size in game
 DEFAULT_FONT = 32
 
+# Headings = available item classes
 headings = []
 headings.append(None)                          # 0
 headings.append(" Fishing Rods")               # 1
@@ -52,6 +55,7 @@ headings.append("Belts")                       # 35
 headings.append("Amulets")                     # 36
 headings.append("Rings")                       # 37
 
+# Rarity dropdown options
 rarities = []
 rarities.append("All")
 rarities.append("Unique")
@@ -59,6 +63,7 @@ rarities.append("Rare")
 rarities.append("Magic")
 rarities.append("normal")
 
+# Font size dropdown options
 fontSizes = []
 fontSizes.append(18)
 fontSizes.append(19)
@@ -89,6 +94,7 @@ fontSizes.append(43)
 fontSizes.append(44)
 fontSizes.append(45)
 
+# Show or Hide dropdown options
 showHide = []
 showHide.append("Show")
 showHide.append("Hide")
