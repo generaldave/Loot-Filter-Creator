@@ -105,7 +105,8 @@ class Block(Toplevel):
                              width = 0, \
                              font = self.font, \
                              justify = "center", \
-                             textvariable = self.previewText)
+                             textvariable = self.previewText, \
+                             highlightthickness = 2)
 
         self.scrollbar = Scrollbar(self.rightFrame)
         self.editArea = Text(self.rightFrame, \
