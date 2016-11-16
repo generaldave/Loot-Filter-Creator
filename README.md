@@ -20,7 +20,7 @@ Work on commenting.
 
 Include Item Level, Drop Level, Quality,  BaseType, Socket, Height, and Weight options.
 
-Inclued Alert Sound action.
+Include Alert Sound action.
 
 Be able to decide Show/Hide.
 
