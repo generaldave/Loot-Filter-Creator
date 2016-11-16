@@ -107,14 +107,15 @@ class GeneratedText(object):
 
     # Method creates and returns a comment
     def createComment(self, comment):
-        self.text =  "# " + comment.lstrip() + "\n"
+        self.text =  "# " + comment.lstrip()
 
     # Method creates Block text
     def createBlockText(self, index, rarityText, fontSize, \
-                        textColor, borderColor, bgColor):
-        #self.text = ""
+                        textColor, borderColor, bgColor, \
+                        comment):
         # Show Class
-        self.text = "Show"                        + "\n"  + \
+        self.text = comment + "\n" + \
+                    "Show"                   + "\n"  + \
                     "    Class \""                        + \
                     headings[index].lstrip() + "\""  + "\n"
 

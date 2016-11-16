@@ -32,7 +32,7 @@ class Block(Toplevel):
         self.index       = index
         self.font        = font.Font(family = "Helvetica",  size = 12)
         self.fontSize    = DEFAULT_FONT
-        self.textColor   = (0, 0, 0)
+        self.textColor   = (200, 200, 200)
         self.bgColor     = (0, 0, 0)
         self.borderColor = (0, 0, 0)
         self.textArray = []
@@ -40,16 +40,24 @@ class Block(Toplevel):
         
         # Set up GUI
         Toplevel.__init__(self)
-        self.setupGUI(title)
+        self.setupGUI(title)        
 
         # Create comment
         self.comment = GeneratedText()
         self.comment.createComment(headings[self.index])
 
+        self.rarityUpdate(rarities[0])
+        self.fontSizeUpdate(DEFAULT_FONT)
+        self.fontSizeText.set(str(self.fontSize))
+        self.preview.config(fg = "#C8C8C8")
+        self.preview.config(bg = "#000000")
+        self.preview.config(highlightbackground = "#000000")
+
         # Call method to create Block text
         self.text.createBlockText(self.index, self.rarityText, \
                                   self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor)
+                                  self.borderColor, self.bgColor, \
+                                  self.comment.getText())
 
         # Call method to preview text
         self.editAreaInsert()
@@ -60,7 +68,7 @@ class Block(Toplevel):
         self.geometry("425x400")
 
         # Create GUI Frames
-        self.leftFrame  = Frame(self)
+        self.leftFrame  = Frame(self, background = "Blue")
         self.rightFrame = Frame(self)
 
         # Create Left GUI Widgets
@@ -106,7 +114,8 @@ class Block(Toplevel):
                              font = self.font, \
                              justify = "center", \
                              textvariable = self.previewText, \
-                             highlightthickness = 2)
+                             highlightthickness = 1, \
+                             relief = FLAT)
 
         self.scrollbar = Scrollbar(self.rightFrame)
         self.editArea = Text(self.rightFrame, \
@@ -116,7 +125,7 @@ class Block(Toplevel):
                         yscrollcommand = self.scrollbar.set, \
                         borderwidth = 1)
         self.scrollbar.config(command = self.editArea.yview)
-
+        
         # Place GUI Frames
         self.leftFrame.pack(side = LEFT, padx = 5)
         self.rightFrame.pack(side = RIGHT, padx = 5)
@@ -151,21 +160,22 @@ class Block(Toplevel):
         # Reset defaults
         self.text.setText("")
         self.fontSize    = DEFAULT_FONT
-        self.textColor   = (0, 0, 0)
+        self.textColor   = (200, 200, 200)
         self.bgColor     = (0, 0, 0)
         self.borderColor = (0, 0, 0)
 
         self.rarityUpdate(rarities[0])
         self.fontSizeUpdate(DEFAULT_FONT)
         self.fontSizeText.set(str(self.fontSize))
-        self.preview.config(fg = "#000000")
-        self.preview.config(bg = "#F0F0ED")
-        self.preview.config(highlightbackground = "#F0F0ED")
+        self.preview.config(fg = "#C8C8C8")
+        self.preview.config(bg = "#000000")
+        self.preview.config(highlightbackground = "#000000")
 
         # Call method to create Block text
         self.text.createBlockText(self.index, self.rarityText, \
                                   self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor)
+                                  self.borderColor, self.bgColor, \
+                                  self.comment.getText())
 
         # Call method to preview text
         self.editAreaInsert()
@@ -174,10 +184,10 @@ class Block(Toplevel):
     def editAreaInsert(self):
         self.editArea.delete(1.0, END)
         for text in self.textArray:
-            self.editArea.insert(INSERT, self.comment.getText())
+            #self.editArea.insert(INSERT, self.comment.getText())
             self.editArea.insert(INSERT, text)
             self.editArea.insert(INSERT, "\n")
-        self.editArea.insert(INSERT, self.comment.getText())
+        #self.editArea.insert(INSERT, self.comment.getText())
         self.editArea.insert(INSERT, self.text.getText())
 
     # Method decides font size
@@ -218,7 +228,8 @@ class Block(Toplevel):
         # Call method to create Block text
         self.text.createBlockText(self.index, self.rarityText, \
                                   self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor)
+                                  self.borderColor, self.bgColor, \
+                                  self.comment.getText())
 
         # Call method to preview text
         self.editAreaInsert()
@@ -232,7 +243,8 @@ class Block(Toplevel):
         # Call method to create Block text
         self.text.createBlockText(self.index, self.rarityText, \
                                   self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor)
+                                  self.borderColor, self.bgColor, \
+                                  self.comment.getText())
 
         # Call method to preview text
         self.editAreaInsert()
@@ -246,7 +258,8 @@ class Block(Toplevel):
         # Call method to create Block text
         self.text.createBlockText(self.index, self.rarityText, \
                                   self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor)
+                                  self.borderColor, self.bgColor, \
+                                  self.comment.getText())
 
         # Call method to preview text
         self.editAreaInsert()
@@ -260,7 +273,8 @@ class Block(Toplevel):
         # Call method to create Block text
         self.text.createBlockText(self.index, self.rarityText, \
                                   self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor)
+                                  self.borderColor, self.bgColor, \
+                                  self.comment.getText())
 
         # Call method to preview text
         self.editAreaInsert()
@@ -272,7 +286,8 @@ class Block(Toplevel):
         # Call method to create Block text
         self.text.createBlockText(self.index, self.rarityText, \
                                   self.fontSize, self.textColor, \
-                                  self.borderColor, self.bgColor)
+                                  self.borderColor, self.bgColor, \
+                                  self.comment.getText())
 
         # Call method to preview text
         self.editAreaInsert()
