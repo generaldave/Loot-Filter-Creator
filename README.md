@@ -6,11 +6,11 @@ Once the wizard is done user can goto Export in the File menu to export the file
 
 The name of the file can either be changed in file explorer after created or in Variables.py (FILTER_NAME) at the top.
 
-![Main Form](https://cloud.githubusercontent.com/assets/7481680/20274895/54e33ff0-aa64-11e6-9602-23be3117898e.png)
+![mainwindow](https://cloud.githubusercontent.com/assets/7481680/20356922/08985752-abf4-11e6-947f-6977a8d4467d.png)
 
 User can currently change rarity, text size, text colour, border colour, and background colour. The Commit button commits to that rule and allows another to be created. The Done button commits the block and moves on to the next class. Currently user has to click commit before done.
 
-![block](https://cloud.githubusercontent.com/assets/7481680/20327149/e5592f4a-ab59-11e6-939a-55392f0568b1.png)
+![blockwindow](https://cloud.githubusercontent.com/assets/7481680/20356967/2f69c2ee-abf4-11e6-9cc0-2c11b5b90218.png)
 
 This app is still under construction. Layout is not concrete.
 
