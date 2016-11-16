@@ -28,7 +28,7 @@ from Block         import *   # Loot filter blocks
 #######################################################################
 
 TITLE    = "Loot Filter Creator"   # GUI Title.
-GEOMETRY = "800x775"               # GUI screen size.
+GEOMETRY = "800x800"               # GUI screen size.
 
 #######################################################################
 #                                                                     #
@@ -120,7 +120,7 @@ class LootFilterCreator(object):
         self.editAreaInsert(description.getText())
 
         # Insert headings and rules in editArea
-        for i in range(1, len(headings)):
+        for i in range(1, len(headings) - 1):
             # Heading string
             string = str(i) + "." + headings[i]
 
@@ -141,6 +141,15 @@ class LootFilterCreator(object):
             self.editAreaInsert(headingsArray[i].getText())
             for text in block:
                 self.editAreaInsert(text)
+
+        # Fail safe Show
+        length = len(headings) - 1
+        string = str(length) + "." + headings[length]
+        showHeading = GeneratedText()
+        showHeading.createHeading(string.upper())
+        self.checkButtonsArray[length].select()
+        self.editAreaInsert(showHeading.getText())
+        self.editAreaInsert("Show")
 
 #######################################################################
 #                                                                     #

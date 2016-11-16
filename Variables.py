@@ -54,6 +54,7 @@ headings.append("Helmets")                     # 34
 headings.append("Belts")                       # 35
 headings.append("Amulets")                     # 36
 headings.append("Rings")                       # 37
+headings.append("Fail Safe Show")              # 38
 
 # Rarity dropdown options
 rarities = []
