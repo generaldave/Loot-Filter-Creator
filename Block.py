@@ -274,6 +274,7 @@ class Block(Toplevel):
         self.setItemOperator(operators[3])
         self.setQuality(qualities[0])
         self.setQualityOperator(operators[3])
+        self.showHideUpdate(showHide[0])
 
     # Method commits text
     def commitText(self):
