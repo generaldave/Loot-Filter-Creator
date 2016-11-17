@@ -33,6 +33,7 @@ class Block(Toplevel):
         self.font        = font.Font(family = "Helvetica",  size = 12)
         self.fontSize    = DEFAULT_FONT
         self.textArray   = []
+        self.colorSet    = False
 
         # Populate soundLevels, 0 - 300
         for i in range(301):
@@ -260,12 +261,13 @@ class Block(Toplevel):
         self.borderColor = (0, 0, 0)
         self.text = GeneratedText()
         self.text.setText("")
-        self.rarityUpdate(rarities[0])
-        self.fontSizeUpdate(DEFAULT_FONT)
-        self.fontSizeText.set(str(self.fontSize))
+        self.colorSet = False
         self.preview.config(fg = "#C8C8C8")
         self.preview.config(bg = "#000000")
         self.preview.config(highlightbackground = "#000000")
+        self.rarityUpdate(rarities[0])
+        self.fontSizeUpdate(DEFAULT_FONT)
+        self.fontSizeText.set(str(self.fontSize))
         self.setSoundFile(str(sounds[0]))
         self.setSoundLevel(str(soundLevels[0]))
         self.setDropLevel(levels[0])
@@ -400,6 +402,7 @@ class Block(Toplevel):
         color = askcolor()
         self.preview.config(highlightbackground = color[1])   # hex color
         self.borderColor = color[0]                           # rgb color
+        self.colorSet = True
 
         # Call method to preview text
         self.editAreaInsert()
@@ -409,6 +412,7 @@ class Block(Toplevel):
         color = askcolor()
         self.preview.config(bg = color[1])   # hex color
         self.bgColor = color[0]              # rgb color
+        self.colorSet = True
 
         # Call method to preview text
         self.editAreaInsert()
@@ -418,6 +422,7 @@ class Block(Toplevel):
         color = askcolor()
         self.preview.config(fg = color[1])   # hex color
         self.textColor = color[0]            # rgb color
+        self.colorSet = True
 
         # Call method to preview text
         self.editAreaInsert()
@@ -441,6 +446,38 @@ class Block(Toplevel):
     # Method updates rarity selected
     def rarityUpdate(self, value):
         self.rarityText.set(value)
+        
+        # Set default colors
+        if (not self.colorSet and \
+            (headings[self.index].lstrip() == "Active Skill Gems" or \
+             headings[self.index].lstrip() == "Support Skill Gems")):
+            self.textColor = (27, 162, 155)
+            self.preview.config(fg = "#1BA29B")
+        elif (not self.colorSet and \
+            headings[self.index].lstrip() == "Currency"):
+            self.textColor = (170, 158, 130)
+            self.preview.config(fg = "#AA9E82") 
+        elif (not self.colorSet and \
+            headings[self.index].lstrip() == "Quest Items"):
+            self.textColor = (74, 230, 58)
+            self.preview.config(fg = "#4AE63A") 
+        elif (not self.colorSet and \
+            headings[self.index].lstrip() == "Divination Cards"):
+            self.textColor = (170, 230, 230)
+            self.preview.config(fg = "#AAE6E6")         
+        elif (not self.colorSet and \
+            (value == "All" or value == "Normal")):
+            self.textColor = (200, 200, 200)
+            self.preview.config(fg = "#C8C8C8")
+        elif (not self.colorSet and value == "Unique"):
+            self.textColor = (175, 96, 37)
+            self.preview.config(fg = "#AF6025")
+        elif (not self.colorSet and value == "Rare"):
+            self.textColor = (255, 255, 119)
+            self.preview.config(fg = "#FFFF77")
+        elif (not self.colorSet and value == "Magic"):
+            self.textColor = (136, 136, 255)
+            self.preview.config(fg = "#8888FF")
 
         # Call method to preview text
         self.editAreaInsert()

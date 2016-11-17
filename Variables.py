@@ -29,32 +29,34 @@ headings.append(" Utility Flasks")             # 9
 headings.append("Critical Utility Flasks")     # 10
 headings.append("Active Skill Gems")           # 11
 headings.append("Support Skill Gems")          # 12
-headings.append("Jewel")                       # 13
-headings.append("Maps")                        # 14
-headings.append("Fishing Rods")                # 15
-headings.append("Body Armours")                # 16
-headings.append("Two Hand Swords")             # 17
-headings.append("Two Hand Axes")               # 18
-headings.append("Two Hand Maces")              # 19
-headings.append("Bows")                        # 20
-headings.append("Staves")                      # 21
-headings.append("Quivers")                     # 22
-headings.append("Claws")                       # 23
-headings.append("Daggers")                     # 24
-headings.append("Wands")                       # 25
-headings.append("One Hand Swords")             # 26
-headings.append("Thrusting One Hand Swords")   # 27
-headings.append("One Hand Axes")               # 28
-headings.append("One Hand Maces")              # 29
-headings.append("Sceptres")                    # 30
-headings.append("Shields")                     # 31
-headings.append("Gloves")                      # 32
-headings.append("Boots")                       # 33
-headings.append("Helmets")                     # 34
-headings.append("Belts")                       # 35
-headings.append("Amulets")                     # 36
-headings.append("Rings")                       # 37
-headings.append("Fail Safe Show")              # 38
+headings.append("Currency")                    # 13
+headings.append("Divination Cards")            # 14
+headings.append("Jewel")                       # 15
+headings.append("Maps")                        # 16
+headings.append("Fishing Rods")                # 17
+headings.append("Body Armours")                # 18
+headings.append("Two Hand Swords")             # 19
+headings.append("Two Hand Axes")               # 20
+headings.append("Two Hand Maces")              # 21
+headings.append("Bows")                        # 22
+headings.append("Staves")                      # 23
+headings.append("Quivers")                     # 24
+headings.append("Claws")                       # 25
+headings.append("Daggers")                     # 26
+headings.append("Wands")                       # 27
+headings.append("One Hand Swords")             # 28
+headings.append("Thrusting One Hand Swords")   # 29
+headings.append("One Hand Axes")               # 30
+headings.append("One Hand Maces")              # 31
+headings.append("Sceptres")                    # 32
+headings.append("Shields")                     # 33
+headings.append("Gloves")                      # 34
+headings.append("Boots")                       # 35
+headings.append("Helmets")                     # 36
+headings.append("Belts")                       # 37
+headings.append("Amulets")                     # 38
+headings.append("Rings")                       # 39
+headings.append("Fail Safe Show")              # 40
 
 # Rarity dropdown options
 rarities = []
