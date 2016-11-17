@@ -17,21 +17,21 @@ DEFAULT_FONT = 32
 # Headings = available item classes
 headings = []
 headings.append(None)                          # 0
-headings.append(" Fishing Rods")               # 1
-headings.append(" Quest Items")                # 2
-headings.append(" Labyrinth Items")            # 3
-headings.append(" Labyrinth Trikets")          # 4
-headings.append(" Labyrinth Map Items")        # 5
-headings.append(" Map Fragments")              # 6
-headings.append(" Life Flasks")                # 7
-headings.append(" Mana Flasks")                # 8
-headings.append(" Hybrid Flasks")              # 9
-headings.append("Utility Flasks")              # 10
-headings.append("Critical Utility Flasks")     # 11
-headings.append("Active Skill Gems")           # 12
-headings.append("Support Skill Gems")          # 13
-headings.append("Jewels")                      # 14
-headings.append("Maps")                        # 15
+headings.append(" Quest Items")                # 1
+headings.append(" Labyrinth Item")             # 2
+headings.append(" Labyrinth Triket")           # 3
+headings.append(" Labyrinth Map Item")         # 4
+headings.append(" Map Fragments")              # 5
+headings.append(" Life Flasks")                # 6
+headings.append(" Mana Flasks")                # 7
+headings.append(" Hybrid Flasks")              # 8
+headings.append(" Utility Flasks")             # 9
+headings.append("Critical Utility Flasks")     # 10
+headings.append("Active Skill Gems")           # 11
+headings.append("Support Skill Gems")          # 12
+headings.append("Jewel")                       # 13
+headings.append("Maps")                        # 14
+headings.append("Fishing Rods")                # 15
 headings.append("Body Armours")                # 16
 headings.append("Two Hand Swords")             # 17
 headings.append("Two Hand Axes")               # 18
@@ -100,3 +100,30 @@ showHide = []
 showHide.append("Show")
 showHide.append("Hide")
 
+# Sound file dropdown options
+sounds = []
+sounds.append(1)
+sounds.append(2)
+sounds.append(3)
+sounds.append(4)
+sounds.append(5)
+sounds.append(6)
+sounds.append(7)
+sounds.append(8)
+sounds.append(9)
+
+# Sound level dropdown options
+soundLevels = []   # Create dynamically, 0-300
+
+# Operator dropdown options
+operators = []
+operators.append("<")
+operators.append("<=")
+operators.append(">")
+operators.append(">=")
+
+# Levels dropdown options
+levels = []   # Create dynamically, 1-100
+
+# Quality dropdown options
+qualities = []   # Create dynamically, 0-20

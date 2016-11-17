@@ -112,7 +112,10 @@ class GeneratedText(object):
     # Method creates Block text
     def createBlockText(self, index, rarityText, fontSize, \
                         textColor, borderColor, bgColor, \
-                        comment, showHide):
+                        comment, showHide, soundFile, \
+                        soundLevel, dropOperator, dropLevel, \
+                        itemOperator, itemLevel, quality, \
+                        qualityOperator):
         # Show Class
         self.text = comment + "\n" + \
                     showHide.get()           + "\n"  + \
@@ -123,6 +126,24 @@ class GeneratedText(object):
         if (rarityText.get() != "All"):
             self.text = self.text + \
                     "    Rarity " + rarityText.get() + "\n"
+
+        # Quality
+        self.text = self.text             + \
+                    "    Quality "        + \
+                    qualityOperator.get() + " " + \
+                    quality.get()         + "\n"
+
+        # Item Level
+        self.text = self.text + \
+                    "    ItemLevel "   + \
+                    itemOperator.get() + " " + \
+                    itemLevel.get()    + "\n"
+
+        # Drop Level
+        self.text = self.text + \
+                    "    DropLevel "   + \
+                    dropOperator.get() + " " + \
+                    dropLevel.get()    + "\n"
 
         # Font Size
         self.text = self.text + \
@@ -148,3 +169,9 @@ class GeneratedText(object):
                     str(int(bgColor[0])) + " " + \
                     str(int(bgColor[1])) + " " + \
                     str(int(bgColor[2])) + "\n"
+
+        # Sound
+        self.text = self.text + \
+                    "    PlayAlertSound " + soundFile.get()  + \
+                    " "                   + soundLevel.get() + "\n"
+                    

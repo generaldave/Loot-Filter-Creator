@@ -32,7 +32,19 @@ class Block(Toplevel):
         self.index       = index
         self.font        = font.Font(family = "Helvetica",  size = 12)
         self.fontSize    = DEFAULT_FONT
-        self.textArray = []
+        self.textArray   = []
+
+        # Populate soundLevels, 0 - 300
+        for i in range(301):
+            soundLevels.append(i)
+
+        # Populate levels, 1 - 100
+        for i in range(1, 101):
+            levels.append(i)
+
+        # Populate qualities, 0 - 20
+        for i in range(21):
+            qualities.append(i)
         
         # Set up GUI
         Toplevel.__init__(self)
@@ -51,11 +63,17 @@ class Block(Toplevel):
     # Method sets up GUI
     def setupGUI(self, title):
         self.title(title)
-        self.geometry("425x400")
+        self.geometry("510x500")
 
         # Create GUI Frames
-        self.leftFrame  = Frame(self, background = "Blue")
-        self.rightFrame = Frame(self)
+        self.leftFrame    = Frame(self, background = "Blue")
+        self.rightFrame   = Frame(self)
+        self.rarityFrame  = Frame(self.leftFrame)
+        self.soundFrame   = Frame(self.leftFrame)
+        self.fontFrame    = Frame(self.leftFrame)
+        self.dropFrame    = Frame(self.leftFrame)
+        self.itemFrame    = Frame(self.leftFrame)
+        self.qualityFrame = Frame(self.leftFrame)
 
         # Create Left GUI Widgets
         self.showHideText = StringVar()
@@ -64,27 +82,93 @@ class Block(Toplevel):
                           self.showHideText, \
                           *showHide, \
                           command = self.showHideUpdate)
+        self.emptySpace3 = Button(self.leftFrame, \
+                                  state = "disabled", \
+                                  borderwidth = 0)
+        self.rarityLabel = Label(self.rarityFrame, text = "Rarity:")
         self.rarityText = StringVar()
         self.rarityText.set(rarities[0])
-        self.rarityMenu = OptionMenu(self.leftFrame, \
+        self.rarityMenu = OptionMenu(self.rarityFrame, \
                           self.rarityText, \
                           *rarities, \
                           command = self.rarityUpdate)
+        self.rarityMenu.config(width = 10)
+        self.qualityLabel = Label(self.qualityFrame, text = "Quality:")
+        self.qualityOperatorText = StringVar()
+        self.qualityOperatorText.set(operators[3])
+        self.qualityOperatorMenu = OptionMenu(self.qualityFrame, \
+                                      self.qualityOperatorText, \
+                                      *operators, \
+                                      command = self.setQualityOperator)
+        self.qualityText = StringVar()
+        self.qualityText.set(qualities[0])
+        self.qualityMenu = OptionMenu(self.qualityFrame, \
+                                     self.qualityText, \
+                                     *qualities, \
+                                     command = self.setQuality)
+        self.itemLevelLabel = Label(self.itemFrame, text = "Item Level:")
+        self.itemOperatorText = StringVar()
+        self.itemOperatorText.set(operators[3])
+        self.itemOperatorMenu = OptionMenu(self.itemFrame, \
+                                          self.itemOperatorText, \
+                                          *operators, \
+                                          command = self.setItemOperator)
+        self.itemLevelText = StringVar()
+        self.itemLevelText.set(str(levels[0]))
+        self.itemLevelMenu = OptionMenu(self.itemFrame, \
+                                        self.itemLevelText, \
+                                        *levels, \
+                                        command = self.setItemLevel)
+        self.dropOperatorText = StringVar()
+        self.dropOperatorText.set(operators[3])
+        self.dropOperatorMenu = OptionMenu(self.dropFrame, \
+                                          self.dropOperatorText, \
+                                          *operators, \
+                                          command = self.setDropOperator)
+        self.dropLevelLabel = Label(self.dropFrame, text = "Drop Level:")
+        self.dropLevelText = StringVar()
+        self.dropLevelText.set(str(levels[0]))
+        self.dropLevelMenu = OptionMenu(self.dropFrame, \
+                                        self.dropLevelText, \
+                                        *levels, \
+                                        command = self.setDropLevel)
+        self.emptySpace4 = Button(self.leftFrame, \
+                                  state = "disabled", \
+                                  borderwidth = 0)
+        self.fontLabel = Label(self.fontFrame, text = "Font:")
         self.fontSizeText = StringVar()
         self.fontSizeText.set(str(self.fontSize))
-        self.fontSizeMenu = OptionMenu(self.leftFrame, \
+        self.fontSizeMenu = OptionMenu(self.fontFrame, \
                                        self.fontSizeText, \
                                        *fontSizes, \
                                        command = self.fontSizeUpdate)
+        self.fontSizeMenu.config(width = 10)
         self.textColorButton = Button(self.leftFrame, \
                                       text = "Text Colour", \
                                       command = self.setTextColor)
-        self.bgColorButton = Button(self.leftFrame, \
-                                    text = "Background Colour", \
-                                    command = self.setBGColor)
         self.borderColorButton = Button(self.leftFrame, \
                                         text = "Border Colour", \
                                         command = self.setBorderColor)
+        self.bgColorButton = Button(self.leftFrame, \
+                                    text = "Background Colour", \
+                                    command = self.setBGColor)
+        self.soundLabelText = "Sound File:     Volume:"
+        self.soundLabel = Label(self.soundFrame, \
+                                text = self.soundLabelText)
+        self.soundFileText = StringVar()
+        self.soundFileText.set(str(sounds[0]))
+        self.soundFile = OptionMenu(self.soundFrame, \
+                                     self.soundFileText, \
+                                     *sounds, \
+                                     command = self.setSoundFile)
+        self.soundFile.config(width = 6)
+        self.soundLevelText = StringVar()
+        self.soundLevelText.set(str(soundLevels[0]))
+        self.soundLevel = OptionMenu(self.soundFrame, \
+                                     self.soundLevelText, \
+                                     *soundLevels, \
+                                     command = self.setSoundLevel)
+        self.soundLevel.config(width = 6)
         self.emptySpace = Button(self.leftFrame, \
                                  state = "disabled", \
                                  borderwidth = 0)
@@ -112,7 +196,7 @@ class Block(Toplevel):
         self.scrollbar = Scrollbar(self.rightFrame)
         self.editArea = Text(self.rightFrame, \
                         width = 39,
-                        height = 17, \
+                        height = 30, \
                         wrap = "word", \
                         yscrollcommand = self.scrollbar.set, \
                         borderwidth = 1)
@@ -124,11 +208,33 @@ class Block(Toplevel):
 
         # Place Left Frame GUI Widgets
         self.showHideMenu.pack(fill = X)
-        self.rarityMenu.pack(fill = X)
-        self.fontSizeMenu.pack(fill = X)
+        self.emptySpace3.pack(fill = X)
+        self.rarityFrame.pack(fill = X)
+        self.rarityLabel.pack(side = LEFT)
+        self.rarityMenu.pack(side = RIGHT)
+        self.qualityFrame.pack(fill = X)
+        self.qualityLabel.pack(side = LEFT)
+        self.qualityMenu.pack(side = RIGHT)
+        self.qualityOperatorMenu.pack(side = RIGHT)
+        self.itemFrame.pack(fill = X)
+        self.itemLevelLabel.pack(side = LEFT)
+        self.itemOperatorMenu.pack(side = LEFT)
+        self.itemLevelMenu.pack(side = LEFT)
+        self.dropFrame.pack(fill = X)
+        self.dropLevelLabel.pack(side = LEFT)
+        self.dropOperatorMenu.pack(side = LEFT)
+        self.dropLevelMenu.pack(side = LEFT)
+        self.emptySpace4.pack(fill = X)
+        self.fontFrame.pack(fill = X)
+        self.fontLabel.pack(side = LEFT)
+        self.fontSizeMenu.pack(side = RIGHT)
         self.textColorButton.pack(fill = X)
         self.borderColorButton.pack(fill = X)
         self.bgColorButton.pack(fill = X)
+        self.soundFrame.pack(fill = X)
+        self.soundLabel.pack(fill = X)
+        self.soundFile.pack(side = LEFT)
+        self.soundLevel.pack(side = RIGHT)
         self.emptySpace.pack(fill = X)
         self.emptySpace2.pack(fill = X)
         self.commitButton.pack(fill = X)
@@ -160,6 +266,14 @@ class Block(Toplevel):
         self.preview.config(fg = "#C8C8C8")
         self.preview.config(bg = "#000000")
         self.preview.config(highlightbackground = "#000000")
+        self.setSoundFile(str(sounds[0]))
+        self.setSoundLevel(str(soundLevels[0]))
+        self.setDropLevel(levels[0])
+        self.setDropOperator(operators[3])
+        self.setItemLevel(levels[0])
+        self.setItemOperator(operators[3])
+        self.setQuality(qualities[0])
+        self.setQualityOperator(operators[3])
 
     # Method commits text
     def commitText(self):
@@ -178,7 +292,16 @@ class Block(Toplevel):
                                   self.fontSize, self.textColor, \
                                   self.borderColor, self.bgColor, \
                                   self.comment.getText(), \
-                                  self.showHideText)
+                                  self.showHideText, \
+                                  self.soundFileText, \
+                                  self.soundLevelText,
+                                  self.dropOperatorText, \
+                                  self.dropLevelText, \
+                                  self.itemOperatorText, \
+                                  self.itemLevelText, \
+                                  self.qualityText,
+                                  self.qualityOperatorText)
+        
         # Show preview
         self.editArea.delete(1.0, END)
         for text in self.textArray:
@@ -213,7 +336,63 @@ class Block(Toplevel):
             return 15
         if (sizeIn == 44 or sizeIn ==45):
             return 16
-        return 0   # This suggests an error    
+        return 0   # This suggests an error
+
+    # Method set quality operator
+    def setQualityOperator(self, value):
+        self.qualityOperatorText.set(value)
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method sets quality
+    def setQuality(self, value):
+        self.qualityText.set(str(value))
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method sets drop level
+    def setItemLevel(self, value):
+        self.itemLevelText.set(str(value))
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method sets drop operator
+    def setItemOperator(self, value):
+        self.itemOperatorText.set(value)
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method sets drop level
+    def setDropLevel(self, value):
+        self.dropLevelText.set(str(value))
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method sets drop operator
+    def setDropOperator(self, value):
+        self.dropOperatorText.set(value)
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method sets sound file
+    def setSoundFile(self, value):
+        self.soundFileText.set(str(value))
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method set sound level
+    def setSoundLevel(self, value):
+        self.soundLevelText.set(str(value))
+
+        # Call method to preview text
+        self.editAreaInsert()
 
     # Method sets border colour
     def setBorderColor(self):
