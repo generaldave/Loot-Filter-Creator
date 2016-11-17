@@ -115,7 +115,8 @@ class GeneratedText(object):
                         comment, showHide, soundFile, \
                         soundLevel, dropOperator, dropLevel, \
                         itemOperator, itemLevel, quality, \
-                        qualityOperator):
+                        qualityOperator, count, countOperator, \
+                        link, linkOperator, rgb):
         # Show Class
         self.text = comment + "\n" + \
                     showHide.get()           + "\n"  + \
@@ -134,16 +135,32 @@ class GeneratedText(object):
                     quality.get()         + "\n"
 
         # Item Level
-        self.text = self.text + \
+        self.text = self.text          + \
                     "    ItemLevel "   + \
                     itemOperator.get() + " " + \
                     itemLevel.get()    + "\n"
 
         # Drop Level
-        self.text = self.text + \
+        self.text = self.text          + \
                     "    DropLevel "   + \
                     dropOperator.get() + " " + \
                     dropLevel.get()    + "\n"
+
+        # Socket Count
+        self.text = self.text           + \
+                    "    Sockets "      + \
+                    countOperator.get() + " " + \
+                    count.get()         + "\n"
+
+        # Socket Links
+        self.text = self.text            + \
+                    "    LinkedSockets " + \
+                    linkOperator.get()   + " " + \
+                    link.get()           + "\n"
+
+        # RGB
+        if (rgb.get() == 1):
+            self.text = self.text + "    SocketGroup RGB\n"
 
         # Font Size
         self.text = self.text + \

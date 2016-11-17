@@ -64,10 +64,10 @@ class Block(Toplevel):
     # Method sets up GUI
     def setupGUI(self, title):
         self.title(title)
-        self.geometry("510x500")
+        self.geometry("510x625")
 
         # Create GUI Frames
-        self.leftFrame    = Frame(self, background = "Blue")
+        self.leftFrame    = Frame(self)
         self.rightFrame   = Frame(self)
         self.rarityFrame  = Frame(self.leftFrame)
         self.soundFrame   = Frame(self.leftFrame)
@@ -75,6 +75,9 @@ class Block(Toplevel):
         self.dropFrame    = Frame(self.leftFrame)
         self.itemFrame    = Frame(self.leftFrame)
         self.qualityFrame = Frame(self.leftFrame)
+        self.socketFrame  = Frame(self.leftFrame)
+        self.countFrame   = Frame(self.socketFrame)
+        self.linkFrame    = Frame(self.socketFrame)
 
         # Create Left GUI Widgets
         self.showHideText = StringVar()
@@ -136,6 +139,41 @@ class Block(Toplevel):
         self.emptySpace4 = Button(self.leftFrame, \
                                   state = "disabled", \
                                   borderwidth = 0)
+        self.socketLabel = Label(self.socketFrame, text = "Sockets:")
+        self.countLabel = Label(self.countFrame, text = "Count:")
+        self.countOperatorText = StringVar()
+        self.countOperatorText.set(operators[3])
+        self.countOperatorMenu = OptionMenu(self.countFrame, \
+                                            self.countOperatorText, \
+                                            *operators, \
+                                            command = self.setCountOperator)
+        self.countText = StringVar()
+        self.countText.set(str(sockets[1]))
+        self.countMenu = OptionMenu(self.countFrame, \
+                                   self.countText, \
+                                   *sockets, \
+                                   command = self.setCount)
+        self.linkLabel = Label(self.linkFrame, text = "Linked:")
+        self.linkOperatorText = StringVar()
+        self.linkOperatorText.set(operators[3])
+        self.linkOperatorMenu = OptionMenu(self.linkFrame, \
+                                            self.linkOperatorText, \
+                                            *operators, \
+                                            command = self.setLinkOperator)
+        self.linkText = StringVar()
+        self.linkText.set(str(sockets[0]))
+        self.linkMenu = OptionMenu(self.linkFrame, \
+                                   self.linkText, \
+                                   *sockets, \
+                                   command = self.setLink)
+        self.isRGB = IntVar()
+        self.rgbCheckbutton = Checkbutton(self.socketFrame, \
+                                          text = "Chromatic?",
+                                          variable = self.isRGB, \
+                                          command = self.setRGB)        
+        self.emptySpace5 = Button(self.leftFrame, \
+                                  state = "disabled", \
+                                  borderwidth = 0)
         self.fontLabel = Label(self.fontFrame, text = "Font:")
         self.fontSizeText = StringVar()
         self.fontSizeText.set(str(self.fontSize))
@@ -193,11 +231,10 @@ class Block(Toplevel):
                              textvariable = self.previewText, \
                              highlightthickness = 2, \
                              relief = FLAT)
-
         self.scrollbar = Scrollbar(self.rightFrame)
         self.editArea = Text(self.rightFrame, \
                         width = 39,
-                        height = 30, \
+                        height = 37, \
                         wrap = "word", \
                         yscrollcommand = self.scrollbar.set, \
                         borderwidth = 1)
@@ -226,6 +263,18 @@ class Block(Toplevel):
         self.dropOperatorMenu.pack(side = LEFT)
         self.dropLevelMenu.pack(side = LEFT)
         self.emptySpace4.pack(fill = X)
+        self.socketFrame.pack(fill = X)
+        self.socketLabel.pack(fill = X)
+        self.countFrame.pack(fill = X)
+        self.countLabel.pack(side = LEFT)
+        self.countMenu.pack(side = RIGHT)
+        self.countOperatorMenu.pack(side = RIGHT)
+        self.linkFrame.pack(fill = X)
+        self.linkLabel.pack(side = LEFT)
+        self.linkMenu.pack(side = RIGHT)
+        self.linkOperatorMenu.pack(side = RIGHT)
+        self.rgbCheckbutton.pack(side = RIGHT)
+        self.emptySpace5.pack(fill = X)
         self.fontFrame.pack(fill = X)
         self.fontLabel.pack(side = LEFT)
         self.fontSizeMenu.pack(side = RIGHT)
@@ -277,6 +326,12 @@ class Block(Toplevel):
         self.setQuality(qualities[0])
         self.setQualityOperator(operators[3])
         self.showHideUpdate(showHide[0])
+        self.setCountOperator(operators[3])
+        self.setCount(str(sockets[0]))
+        self.setLinkOperator(operators[3])
+        self.setLink(str(sockets[0]))
+        self.rgbCheckbutton.config(state = 'normal')
+        self.setRGB()
 
     # Method commits text
     def commitText(self):
@@ -303,7 +358,12 @@ class Block(Toplevel):
                                   self.itemOperatorText, \
                                   self.itemLevelText, \
                                   self.qualityText,
-                                  self.qualityOperatorText)
+                                  self.qualityOperatorText, \
+                                  self.countText, \
+                                  self.countOperatorText, \
+                                  self.linkText, \
+                                  self.linkOperatorText, \
+                                  self.isRGB)
         
         # Show preview
         self.editArea.delete(1.0, END)
@@ -340,6 +400,39 @@ class Block(Toplevel):
         if (sizeIn == 44 or sizeIn ==45):
             return 16
         return 0   # This suggests an error
+
+    # Method sets whether to show chromatic or not
+    def setRGB(self):
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method set socket link operator
+    def setLinkOperator(self, value):
+        self.linkOperatorText.set(value)
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method sets socket link count
+    def setLink(self, value):
+        self.linkText.set(value)
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method set socket count operator
+    def setCountOperator(self, value):
+        self.countOperatorText.set(value)
+
+        # Call method to preview text
+        self.editAreaInsert()
+
+    # Method sets socket count
+    def setCount(self, value):
+        self.countText.set(value)
+
+        # Call method to preview text
+        self.editAreaInsert()
 
     # Method set quality operator
     def setQualityOperator(self, value):

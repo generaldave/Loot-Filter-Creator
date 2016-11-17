@@ -130,3 +130,13 @@ levels = []   # Create dynamically, 1-100
 
 # Quality dropdown options
 qualities = []   # Create dynamically, 0-20
+
+# Socket count dropdown options'
+sockets = []
+sockets.append(0)
+sockets.append(1)
+sockets.append(2)
+sockets.append(3)
+sockets.append(4)
+sockets.append(5)
+sockets.append(6)
