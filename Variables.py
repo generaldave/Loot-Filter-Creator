@@ -121,6 +121,7 @@ operators.append("<")
 operators.append("<=")
 operators.append(">")
 operators.append(">=")
+operators.append("=")
 
 # Levels dropdown options
 levels = []   # Create dynamically, 1-100
