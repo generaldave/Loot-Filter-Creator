@@ -8,9 +8,9 @@ The name of the file can either be changed in file explorer after created or in 
 
 ![mainwindow](https://cloud.githubusercontent.com/assets/7481680/20356922/08985752-abf4-11e6-947f-6977a8d4467d.png)
 
-User can currently change rarity, text size, text colour, border colour, and background colour. The Commit button commits to that rule and allows another to be created. The Done button commits the block and moves on to the next class. Currently user has to click commit before done.
+This functions completely, but will currently allow user to mess up his or her filter. For example, Quest Items should not have socket and rarity information, but currently defaults to including. The Commit button commits to the current rule and allows another to be created. The Done button commits the block or rules for the specific item class and moves on to the next class. User has to click commit before done or the newest ruleset will not be included.
 
-![blockwindow2](https://cloud.githubusercontent.com/assets/7481680/20376367/0089f790-ac54-11e6-9633-5ae622fe9c4a.png)
+![screenshot-body armours](https://cloud.githubusercontent.com/assets/7481680/20400737/ea2c4be0-acc3-11e6-88e8-ee5d640bb236.png)
 
 This app is still under construction. Layout is not concrete.
 
@@ -18,6 +18,6 @@ Todo:
 
 Work on commenting.
 
-Include BaseType and Socket options.
+Include BaseTypes.
 
 Appropriate default colours.
