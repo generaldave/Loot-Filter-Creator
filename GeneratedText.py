@@ -130,33 +130,58 @@ class GeneratedText(object):
 
         # Quality
         self.text = self.text             + \
-                    "    Quality "        + \
-                    qualityOperator.get() + " " + \
-                    quality.get()         + "\n"
+                    "    Quality"
+
+        if (qualityOperator.get() != "="):
+                    self.text = self.text + " " + \
+                                qualityOperator.get()
+
+        self.text = self.text + " " + \
+                    quality.get()   + "\n"
 
         # Item Level
         self.text = self.text          + \
-                    "    ItemLevel "   + \
-                    itemOperator.get() + " " + \
-                    itemLevel.get()    + "\n"
+                    "    ItemLevel"
+
+        if (itemOperator.get() != "="):
+            self.text = self.text + " " + \
+                    itemOperator.get()
+
+        self.text = self.text + " "  + \
+                    itemLevel.get()  + "\n"
 
         # Drop Level
         self.text = self.text          + \
-                    "    DropLevel "   + \
-                    dropOperator.get() + " " + \
+                    "    DropLevel"
+
+        if (dropOperator.get() != "="):
+            self.text = self.text + " " + \
+                    dropOperator.get()
+
+        self.text = self.text + " " + \
                     dropLevel.get()    + "\n"
 
         # Socket Count
-        self.text = self.text           + \
-                    "    Sockets "      + \
-                    countOperator.get() + " " + \
-                    count.get()         + "\n"
+        self.text = self.text + \
+                    "    Sockets"
+
+        if (countOperator.get() != "="):
+            self.text = self.text + " " + \
+                        countOperator.get()
+
+        self.text = self.text + " " + \
+                    count.get()     + "\n"
 
         # Socket Links
         self.text = self.text            + \
-                    "    LinkedSockets " + \
-                    linkOperator.get()   + " " + \
-                    link.get()           + "\n"
+                    "    LinkedSockets"
+
+        if (linkOperator.get() != "="):
+            self.text = self.text + " " + \
+                        linkOperator.get()
+
+        self.text = self.text + " " + \
+                    link.get()      + "\n"
 
         # RGB
         if (rgb.get() == 1):
