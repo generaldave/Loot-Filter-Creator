@@ -125,168 +125,168 @@ currencyBaseTypes.append("Vaal Orb")                            # 30
 ########################################################################
 
 divinationBaseTypes = []
-divinationBaseTypes.append("All")   # 0
-divinationBaseTypes.append("Abandoned Wealth")   # 0
-divinationBaseTypes.append("The Aesthete")   # 0
-divinationBaseTypes.append("Anarchy's Price")   # 0
-divinationBaseTypes.append("The Arena Champion")   # 0
-divinationBaseTypes.append("The Artist")   # 0
-divinationBaseTypes.append("Assassin's Favour")   # 0
-divinationBaseTypes.append("Audacity")   # 0
-divinationBaseTypes.append("The Avenger")   # 0
-divinationBaseTypes.append("The Battle Born")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 0
-divinationBaseTypes.append("")   # 164
+divinationBaseTypes.append("All")                         # 0
+divinationBaseTypes.append("Abandoned Wealth")            # 1
+divinationBaseTypes.append("The Aesthete")                # 2
+divinationBaseTypes.append("Anarchy's Price")             # 3
+divinationBaseTypes.append("The Arena Champion")          # 4
+divinationBaseTypes.append("The Artist")                  # 5
+divinationBaseTypes.append("Assassin's Favour")           # 6
+divinationBaseTypes.append("Audacity")                    # 7
+divinationBaseTypes.append("The Avenger")                 # 8
+divinationBaseTypes.append("The Battle Born")             # 9
+divinationBaseTypes.append("The Betrayal")                # 10
+divinationBaseTypes.append("Birth of the Three")          # 11
+divinationBaseTypes.append("Blind Venture")               # 12
+divinationBaseTypes.append("The Body")                    # 13
+divinationBaseTypes.append("Boundless Realms")            # 14
+divinationBaseTypes.append("Bowyer's Dream")              # 15
+divinationBaseTypes.append("The Brittle Emperor")         # 16
+divinationBaseTypes.append("The Calling")                 # 17
+divinationBaseTypes.append("The Carrion Crow")            # 18
+divinationBaseTypes.append("The Cartographer")            # 19
+divinationBaseTypes.append("Cartographer's Delight")      # 20
+divinationBaseTypes.append("The Cataclysm")               # 21
+divinationBaseTypes.append("The Catalyst")                # 22
+divinationBaseTypes.append("The Celestial justicar")      # 23
+divinationBaseTypes.append("The Chains that Bind")        # 24
+divinationBaseTypes.append("Chaotic Disposition")         # 25
+divinationBaseTypes.append("The Conduit")                 # 26
+divinationBaseTypes.append("Coveted Possession")          # 27
+divinationBaseTypes.append("The Cursed King")             # 28
+divinationBaseTypes.append("The Dapper Prodigy")          # 29
+divinationBaseTypes.append("The Dark Mage")               # 30
+divinationBaseTypes.append("Death")                       # 31
+divinationBaseTypes.append("The Demoness")                # 32
+divinationBaseTypes.append("Destined to Crumble")         # 33
+divinationBaseTypes.append("The Devastator")              # 34
+divinationBaseTypes.append("Dialla's Subjugation")        # 35
+divinationBaseTypes.append("The Doctor")                  # 36
+divinationBaseTypes.append("Doedre's Madness")            # 37
+divinationBaseTypes.append("The Doppleganger")            # 38
+divinationBaseTypes.append("The Dragon")                  # 39
+divinationBaseTypes.append("The Dragon's Heart")          # 40
+divinationBaseTypes.append("The Drunken Aristocrat")      # 41
+divinationBaseTypes.append("Dying Anguish")               # 42
+divinationBaseTypes.append("Earth Drinker")               # 43
+divinationBaseTypes.append("Emperor of Purity")           # 44
+divinationBaseTypes.append("Emperor's Luck")              # 45
+divinationBaseTypes.append("The Encroaching Darkness")    # 46
+divinationBaseTypes.append("The Endurance")               # 47
+divinationBaseTypes.append("The Enlightened")             # 48
+divinationBaseTypes.append("The Ethereal")                # 49
+divinationBaseTypes.append("The Explorer")                # 50
+divinationBaseTypes.append("The Feast")                   # 51
+divinationBaseTypes.append("The Fiend")                   # 52
+divinationBaseTypes.append("The Fletcher")                # 53
+divinationBaseTypes.append("The Flora's Gift")            # 54
+divinationBaseTypes.append("The Formless Sea")            # 55
+divinationBaseTypes.append("The Fox")                     # 56
+divinationBaseTypes.append("The Gambler")                 # 57
+divinationBaseTypes.append("The Gemcutter")               # 58
+divinationBaseTypes.append("Gemcutter's Promise")         # 59
+divinationBaseTypes.append("The Gentleman")               # 60
+divinationBaseTypes.append("Gift of the Gemling Queen")   # 61
+divinationBaseTypes.append("The Gladiator")               # 62
+divinationBaseTypes.append("Glimmer of Hope")             # 63
+divinationBaseTypes.append("Grave Knowledge")             # 64
+divinationBaseTypes.append("The Harvester")               # 65
+divinationBaseTypes.append("Her Mask")                    # 66
+divinationBaseTypes.append("The Hermit")                  # 67
+divinationBaseTypes.append("Heterochromia")               # 68
+divinationBaseTypes.append("The Hoarder")                 # 69
+divinationBaseTypes.append("Hope")                        # 70
+divinationBaseTypes.append("House of Mirrors")            # 71
+divinationBaseTypes.append("Hubris")                      # 72
+divinationBaseTypes.append("Humility")                    # 73
+divinationBaseTypes.append("The Hunger")                  # 74
+divinationBaseTypes.append("Hunter's Resolve")            # 75
+divinationBaseTypes.append("Hunter's Reward")             # 76
+divinationBaseTypes.append("The Immortal")                # 77
+divinationBaseTypes.append("The Incantation")             # 78
+divinationBaseTypes.append("The Inoculated")              # 79
+divinationBaseTypes.append("The Inventor")                # 80
+divinationBaseTypes.append("Jack in the Box")             # 81
+divinationBaseTypes.append("The Jester")                  # 82
+divinationBaseTypes.append("The King's Blade")            # 83
+divinationBaseTypes.append("The King's Heart")            # 84
+divinationBaseTypes.append("Lantador's Lost Love")        # 85
+divinationBaseTypes.append("Last Hope")                   # 86
+divinationBaseTypes.append("The Last One Standing")       # 87
+divinationBaseTypes.append("The Lich")                    # 88
+divinationBaseTypes.append("Light and Truth")             # 89
+divinationBaseTypes.append("The Lion")                    # 90
+divinationBaseTypes.append("The Lord in Black")           # 91
+divinationBaseTypes.append("Lost Worlds")                 # 92
+divinationBaseTypes.append("The Lover")                   # 93
+divinationBaseTypes.append("Loyalty")                     # 94
+divinationBaseTypes.append("Lucky Connections")           # 95
+divinationBaseTypes.append("Lucky Deck")                  # 96
+divinationBaseTypes.append("The Lunaris Priestess")       # 97
+divinationBaseTypes.append("Lysah's Respite")             # 98
+divinationBaseTypes.append("Mawr Blaidd")                 # 99
+divinationBaseTypes.append("The Mercenary")               # 100
+divinationBaseTypes.append("Merciless Armament")          # 101
+divinationBaseTypes.append("The Metalsmith's Gift")       # 102
+divinationBaseTypes.append("A Mother's Parting Gift")     # 103
+divinationBaseTypes.append("The Oath")                    # 104
+divinationBaseTypes.append("The Offering")                # 105
+divinationBaseTypes.append("The One With All")            # 106
+divinationBaseTypes.append("The Pack Leader")             # 107
+divinationBaseTypes.append("The Pact")                    # 108
+divinationBaseTypes.append("The Penitent")                # 109
+divinationBaseTypes.append("The Poet")                    # 110
+divinationBaseTypes.append("Pride Before the Fall")       # 111
+divinationBaseTypes.append("Prosperity")                  # 112
+divinationBaseTypes.append("The Queen")                   # 113
+divinationBaseTypes.append("The Rabid Rhoa")              # 114
+divinationBaseTypes.append("Rain of Chaos")               # 115
+divinationBaseTypes.append("Rain Tempter")                # 116
+divinationBaseTypes.append("Rats")                        # 117
+divinationBaseTypes.append("The Risk")                    # 118
+divinationBaseTypes.append("The Road to Power")           # 119
+divinationBaseTypes.append("The Scarred Meadow")          # 120
+divinationBaseTypes.append("The Scavenger")               # 121
+divinationBaseTypes.append("The Scholar")                 # 122
+divinationBaseTypes.append("Scholar of the Seas")         # 123
+divinationBaseTypes.append("The Sephirot")                # 124
+divinationBaseTypes.append("Shard of Fate")               # 125
+divinationBaseTypes.append("The Sigil")                   # 126
+divinationBaseTypes.append("The Siren")                   # 127
+divinationBaseTypes.append("The Soul")                    # 128
+divinationBaseTypes.append("The Spoiled Prince")          # 129
+divinationBaseTypes.append("The Stormcaller")             # 130
+divinationBaseTypes.append("The Summoner")                # 131
+divinationBaseTypes.append("The Sun")                     # 132
+divinationBaseTypes.append("The Surgeon")                 # 133
+divinationBaseTypes.append("The Surveyor")                # 134
+divinationBaseTypes.append("The Survivalist")             # 135
+divinationBaseTypes.append("The Thaumaturgist")           # 136
+divinationBaseTypes.append("Three Faces in the Dark")     # 137
+divinationBaseTypes.append("The Throne")                  # 138
+divinationBaseTypes.append("Thunderous Skies")            # 139
+divinationBaseTypes.append("Time-Lost Relic")             # 140
+divinationBaseTypes.append("The Tower")                   # 141
+divinationBaseTypes.append("The Traitor")                 # 142
+divinationBaseTypes.append("Tranquility")                 # 143
+divinationBaseTypes.append("Treasure Hunter")             # 144
+divinationBaseTypes.append("The Trial")                   # 145
+divinationBaseTypes.append("Turn the Other Cheek")        # 146
+divinationBaseTypes.append("The Twins")                   # 147
+divinationBaseTypes.append("The Tyrant")                  # 148
+divinationBaseTypes.append("The Union")                   # 149
+divinationBaseTypes.append("The Valkyrie")                # 150
+divinationBaseTypes.append("The Vast")                    # 151
+divinationBaseTypes.append("Vinia's Token")               # 152
+divinationBaseTypes.append("The Visionary")               # 153
+divinationBaseTypes.append("The Void")                    # 154
+divinationBaseTypes.append("Volatile Power")              # 155
+divinationBaseTypes.append("The Warden")                  # 156
+divinationBaseTypes.append("The Warlord")                 # 157
+divinationBaseTypes.append("The Watcher")                 # 158
+divinationBaseTypes.append("Wealth and Power")            # 159
+divinationBaseTypes.append("The Web")                     # 160
+divinationBaseTypes.append("The Wind")                    # 161
+divinationBaseTypes.append("The Wolf")                    # 162
+divinationBaseTypes.append("The Wolf's Shadow")           # 163
+divinationBaseTypes.append("The Wrath")                   # 164
