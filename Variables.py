@@ -19,7 +19,7 @@ headings = []
 headings.append(None)                          # 0
 headings.append(" Quest Items")                # 1
 headings.append(" Labyrinth Item")             # 2
-headings.append(" Labyrinth Triket")           # 3
+headings.append(" Labyrinth Trinket")          # 3
 headings.append(" Labyrinth Map Item")         # 4
 headings.append(" Map Fragments")              # 5
 headings.append(" Life Flasks")                # 6
@@ -30,7 +30,7 @@ headings.append("Critical Utility Flasks")     # 10
 headings.append("Active Skill Gems")           # 11
 headings.append("Support Skill Gems")          # 12
 headings.append("Currency")                    # 13
-headings.append("Divination Cards")            # 14
+headings.append("Divination Card")            # 14
 headings.append("Jewel")                       # 15
 headings.append("Maps")                        # 16
 headings.append("Fishing Rods")                # 17
