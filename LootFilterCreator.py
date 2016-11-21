@@ -20,6 +20,7 @@ from GeneratedText import *   # Loot filter description, headings, etc
 from Variables     import *   # Variables file
 from FileHandler   import *   # Save Loot Filter
 from Block         import *   # Loot filter blocks
+import os                     # Used for clean exiting of app
 
 #######################################################################
 #                                                                     #
@@ -101,7 +102,9 @@ class LootFilterCreator(object):
 
     # Method appeneds text to editArea
     def editAreaInsert(self, token):
-        self.editArea.insert(INSERT, token + "\n")
+        self.editArea.config(state = "normal")
+        self.editArea.insert(END, token + "\n")
+        self.editArea.config(state = "disabled")
 
     # Method creates filter
     # PRE: dynamic = true or false
@@ -156,7 +159,7 @@ class LootFilterCreator(object):
         showHeading.createHeading(string.upper())
         self.checkButtonsArray[length].select()
         self.editAreaInsert(showHeading.getText())
-        self.editAreaInsert("Show")
+        self.editAreaInsert("Show")    
 
 #######################################################################
 #                                                                     #
@@ -164,12 +167,21 @@ class LootFilterCreator(object):
 #                                                                     #
 #######################################################################
 
+# Method destroys object on app close
+def onClosing():
+    if messagebox.askokcancel("Quit", "Are you sure you want to quit?"):
+        os._exit(0)
+
+# Define main - app handler
 def main():
     # Initialize GUI
     root = Tk()
 
     # Initialize LootFilterCreator
     creator = LootFilterCreator(root)
+
+    # Protocol to handle app close
+    root.protocol("WM_DELETE_WINDOW", onClosing)
 
     # Keep app running
     root.mainloop()

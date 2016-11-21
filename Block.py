@@ -356,7 +356,7 @@ class Block(Toplevel):
         # Cannot have 1 link
         if (self.linkText.get() == "1"):
             self.linkText.set("0")
-            
+        self.editArea.config(state = "normal")   
         # Call method to create Block text
         self.text.createBlockText(self.index, self.rarityText, \
                                   self.fontSize, self.textColor, \
@@ -380,9 +380,10 @@ class Block(Toplevel):
         # Show preview
         self.editArea.delete(1.0, END)
         for text in self.textArray:
-            self.editArea.insert(INSERT, text)
-            self.editArea.insert(INSERT, "\n")
-        self.editArea.insert(INSERT, self.text.getText())
+            self.editArea.insert(END, text)
+            self.editArea.insert(END, "\n")
+        self.editArea.insert(END, self.text.getText())
+        self.editArea.config(state = "disabled")
 
     # Method decides font size
     def decideFontSize(self, sizeIn):
