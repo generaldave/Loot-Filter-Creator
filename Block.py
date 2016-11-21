@@ -333,6 +333,14 @@ class Block(Toplevel):
         self.rgbCheckbutton.config(state = 'normal')
         self.setRGB()
 
+        # Disable optoions appropriately
+        if (self.index in enableRarity):
+            self.disableRarity()
+        if (self.index in enableQuality):
+            self.disableQuality()
+        if (self.index in enableSockets):
+            self.disableSockets()
+
     # Method commits text
     def commitText(self):
         self.textArray.append(self.text.getText())
@@ -579,4 +587,19 @@ class Block(Toplevel):
         # Call method to preview text
         self.editAreaInsert()
 
+    # Method disables rarity options
+    def disableRarity(self):
+        self.rarityMenu.config(state = "disabled")
 
+    # Method disables quality options
+    def disableQuality(self):
+        self.qualityMenu.config(state = "disabled")
+        self.qualityOperatorMenu.config(state = "disabled")
+
+    # Method disables socket options
+    def disableSockets(self):
+        self.countOperatorMenu.config(state = "disabled")
+        self.countMenu.config(state = "disabled")
+        self.linkOperatorMenu.config(state = "disabled")
+        self.linkMenu.config(state = "disabled")
+        self.rgbCheckbutton.config(state = "disabled")

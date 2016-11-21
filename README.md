@@ -19,5 +19,3 @@ Todo:
 Work on commenting.
 
 Include BaseTypes.
-
-Appropriate default colours.
