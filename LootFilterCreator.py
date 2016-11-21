@@ -167,8 +167,8 @@ class LootFilterCreator(object):
 #                                                                     #
 #######################################################################
 
-# Method destroys object on app close
-def onClosing():
+# Method closes app without error
+def appClose():
     if messagebox.askokcancel("Quit", "Are you sure you want to quit?"):
         os._exit(0)
 
@@ -181,7 +181,7 @@ def main():
     creator = LootFilterCreator(root)
 
     # Protocol to handle app close
-    root.protocol("WM_DELETE_WINDOW", onClosing)
+    root.protocol("WM_DELETE_WINDOW", appClose)
 
     # Keep app running
     root.mainloop()
