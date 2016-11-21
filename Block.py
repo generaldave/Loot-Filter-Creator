@@ -345,6 +345,10 @@ class Block(Toplevel):
 
     # Method shows preview code
     def editAreaInsert(self):
+        # Cannot have 1 link
+        if (self.linkText.get() == "1"):
+            self.linkText.set("0")
+            
         # Call method to create Block text
         self.text.createBlockText(self.index, self.rarityText, \
                                   self.fontSize, self.textColor, \
