@@ -116,12 +116,18 @@ class GeneratedText(object):
                         soundLevel, dropOperator, dropLevel, \
                         itemOperator, itemLevel, quality, \
                         qualityOperator, count, countOperator, \
-                        link, linkOperator, rgb):
-        # Show Class
+                        link, linkOperator, rgb, baseType):
+        # Class
         self.text = comment + "\n" + \
                     showHide.get()           + "\n"  + \
                     "    Class \""                   + \
                     headings[index].lstrip() + "\""  + "\n"
+
+        # BaseType
+        if (baseType.get() != "All"):
+            self.text = self.text              + \
+                        "    BaseType \""      + \
+                        baseType.get()  + "\"" + "\n"
 
         # Rarity
         if (rarityText.get() != "All" and \

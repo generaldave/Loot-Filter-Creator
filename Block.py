@@ -17,6 +17,7 @@
 from tkinter              import *      # For GUI
 from tkinter              import font   # For fonts
 from Variables            import *      # Variables file
+from BaseTypes            import *      # BaseTypes file
 from GeneratedText        import *      # For comment lines
 from tkinter.colorchooser import *      # For choosing colours
 
@@ -67,17 +68,18 @@ class Block(Toplevel):
         self.geometry("510x625")
 
         # Create GUI Frames
-        self.leftFrame    = Frame(self)
-        self.rightFrame   = Frame(self)
-        self.rarityFrame  = Frame(self.leftFrame)
-        self.soundFrame   = Frame(self.leftFrame)
-        self.fontFrame    = Frame(self.leftFrame)
-        self.dropFrame    = Frame(self.leftFrame)
-        self.itemFrame    = Frame(self.leftFrame)
-        self.qualityFrame = Frame(self.leftFrame)
-        self.socketFrame  = Frame(self.leftFrame)
-        self.countFrame   = Frame(self.socketFrame)
-        self.linkFrame    = Frame(self.socketFrame)
+        self.leftFrame     = Frame(self)
+        self.rightFrame    = Frame(self)
+        self.rarityFrame   = Frame(self.leftFrame)
+        self.soundFrame    = Frame(self.leftFrame)
+        self.fontFrame     = Frame(self.leftFrame)
+        self.dropFrame     = Frame(self.leftFrame)
+        self.itemFrame     = Frame(self.leftFrame)
+        self.qualityFrame  = Frame(self.leftFrame)
+        self.socketFrame   = Frame(self.leftFrame)
+        self.countFrame    = Frame(self.socketFrame)
+        self.linkFrame     = Frame(self.socketFrame)
+        self.baseTypeFrame = Frame(self.rightFrame)
 
         # Create Left GUI Widgets
         self.showHideText = StringVar()
@@ -222,6 +224,16 @@ class Block(Toplevel):
                                  command = self.destroy)
 
         # Create Right GUI Widgets
+        self.baseTypeLabel = Label(self.baseTypeFrame, \
+                                   text = "Base Types:")
+        self.baseTypeArray = self.whichBaseTypes()
+        self.baseTypeText = StringVar()
+        self.baseTypeText.set(self.baseTypeArray[0])
+        self.baseTypeMenu = OptionMenu(self.baseTypeFrame, \
+                                       self.baseTypeText, \
+                                       *self.baseTypeArray, \
+                                       command = self.setBaseType)
+        self.baseTypeMenu.config(width = 23)
         self.previewText = StringVar(self)
         self.previewText.set("")
         self.preview = Entry(self.rightFrame, \
@@ -291,6 +303,9 @@ class Block(Toplevel):
         self.doneButton.pack(fill = X)
 
         # Place Right Frame GUI Widgets
+        self.baseTypeFrame.pack(fill = X)
+        self.baseTypeMenu.pack(side = RIGHT)
+        self.baseTypeLabel.pack(side = RIGHT)
         self.preview.pack(side = TOP, anchor = W)
         self.scrollbar.pack(side = RIGHT, fill = Y)
         self.editArea.pack(side = RIGHT, fill = BOTH, expand = True)
@@ -332,6 +347,7 @@ class Block(Toplevel):
         self.setLink(str(sockets[0]))
         self.rgbCheckbutton.config(state = 'normal')
         self.setRGB()
+        self.setBaseType("All")
 
         # Disable optoions appropriately
         if (self.index in enableRarity):
@@ -356,6 +372,7 @@ class Block(Toplevel):
         # Cannot have 1 link
         if (self.linkText.get() == "1"):
             self.linkText.set("0")
+            
         self.editArea.config(state = "normal")   
         # Call method to create Block text
         self.text.createBlockText(self.index, self.rarityText, \
@@ -375,7 +392,7 @@ class Block(Toplevel):
                                   self.countOperatorText, \
                                   self.linkText, \
                                   self.linkOperatorText, \
-                                  self.isRGB)
+                                  self.isRGB, self.baseTypeText)
         
         # Show preview
         self.editArea.delete(1.0, END)
@@ -413,6 +430,17 @@ class Block(Toplevel):
         if (sizeIn == 44 or sizeIn ==45):
             return 16
         return 0   # This suggests an error
+
+    # Method sets BaseType
+    def setBaseType(self, value):
+        self.baseTypeText.set(value)
+        if (value != "All"):
+            self.previewText.set(value)
+        else:
+            self.previewText.set(headings[self.index].lstrip())
+
+        # Call method to preview text
+        self.editAreaInsert()
 
     # Method sets whether to show chromatic or not
     def setRGB(self):
@@ -604,3 +632,22 @@ class Block(Toplevel):
         self.linkOperatorMenu.config(state = "disabled")
         self.linkMenu.config(state = "disabled")
         self.rgbCheckbutton.config(state = "disabled")
+
+    # Method decides which BaseTypes to show
+    def whichBaseTypes(self):
+        if (self.index == 6):
+            return lifeFlaskBaseTypes
+        elif (self.index == 7):
+            return manaFlaskBaseTypes
+        elif (self.index == 8):
+            return hybridFlaskBaseTypes
+        elif (self.index == 9):
+            return utilityFlaskBaseTypes
+        elif (self.index == 10):
+            return criticalUtilityFlaskBaseTypes
+        elif (self.index == 13):
+            return currencyBaseTypes
+        elif (self.index == 14):
+            return divinationBaseTypes
+        else:
+            return ["All"]

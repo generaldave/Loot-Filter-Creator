@@ -30,7 +30,7 @@ headings.append("Critical Utility Flasks")     # 10
 headings.append("Active Skill Gems")           # 11
 headings.append("Support Skill Gems")          # 12
 headings.append("Currency")                    # 13
-headings.append("Divination Card")            # 14
+headings.append("Divination Card")             # 14
 headings.append("Jewel")                       # 15
 headings.append("Maps")                        # 16
 headings.append("Fishing Rods")                # 17
