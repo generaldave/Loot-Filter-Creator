@@ -106,6 +106,13 @@ class LootFilterCreator(object):
     # Method creates filter
     # PRE: dynamic = true or false
     def createFilter(self):
+        # Start with a blank preview window
+        self.editArea.delete(1.0, END)
+
+        # Uncheck all Class Checkboxes
+        for i in range(1, len(headings)):
+            self.checkButtonsArray[i].deselect()
+        
         # Array of Heading objects
         headingsArray = []
         headingsArray.append(None)

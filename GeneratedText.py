@@ -124,20 +124,22 @@ class GeneratedText(object):
                     headings[index].lstrip() + "\""  + "\n"
 
         # Rarity
-        if (rarityText.get() != "All"):
+        if (rarityText.get() != "All" and \
+            index not in enableRarity):
             self.text = self.text + \
                     "    Rarity " + rarityText.get() + "\n"
 
         # Quality
-        self.text = self.text             + \
-                    "    Quality"
+        if (index not in enableQuality):
+            self.text = self.text             + \
+                        "    Quality"
 
-        if (qualityOperator.get() != "="):
-                    self.text = self.text + " " + \
-                                qualityOperator.get()
+            if (qualityOperator.get() != "="):
+                        self.text = self.text + " " + \
+                                    qualityOperator.get()
 
-        self.text = self.text + " " + \
-                    quality.get()   + "\n"
+            self.text = self.text + " " + \
+                        quality.get()   + "\n"
 
         # Item Level
         self.text = self.text          + \
@@ -161,31 +163,32 @@ class GeneratedText(object):
         self.text = self.text + " " + \
                     dropLevel.get()    + "\n"
 
-        # Socket Count
-        self.text = self.text + \
-                    "    Sockets"
+        if (index not in enableSockets):
+            # Socket Count
+            self.text = self.text + \
+                        "    Sockets"
 
-        if (countOperator.get() != "="):
+            if (countOperator.get() != "="):
+                self.text = self.text + " " + \
+                            countOperator.get()
+
             self.text = self.text + " " + \
-                        countOperator.get()
+                        count.get()     + "\n"
 
-        self.text = self.text + " " + \
-                    count.get()     + "\n"
+            # Socket Links
+            self.text = self.text            + \
+                        "    LinkedSockets"
 
-        # Socket Links
-        self.text = self.text            + \
-                    "    LinkedSockets"
+            if (linkOperator.get() != "="):
+                self.text = self.text + " " + \
+                            linkOperator.get()
 
-        if (linkOperator.get() != "="):
             self.text = self.text + " " + \
-                        linkOperator.get()
+                        link.get()      + "\n"
 
-        self.text = self.text + " " + \
-                    link.get()      + "\n"
-
-        # RGB
-        if (rgb.get() == 1):
-            self.text = self.text + "    SocketGroup RGB\n"
+            # RGB
+            if (rgb.get() == 1):
+                self.text = self.text + "    SocketGroup RGB\n"
 
         # Font Size
         self.text = self.text + \

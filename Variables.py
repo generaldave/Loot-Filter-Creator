@@ -140,3 +140,48 @@ sockets.append(3)
 sockets.append(4)
 sockets.append(5)
 sockets.append(6)
+
+# Array to keep track of what classes cannot have rarity
+enableRarity = []
+enableRarity.append(1)
+enableRarity.append(2)
+enableRarity.append(3)
+enableRarity.append(4)
+enableRarity.append(5)
+enableRarity.append(11)
+enableRarity.append(12)
+enableRarity.append(13)
+enableRarity.append(14)
+
+# Array to keep track of what classes cannot have quality
+enableQuality = []
+enableQuality.append(1)
+enableQuality.append(2)
+enableQuality.append(3)
+enableQuality.append(4)
+enableQuality.append(5)
+enableQuality.append(13)
+enableQuality.append(14)
+enableQuality.append(15)
+
+# Array to keep track of what classes cannot have sockets
+enableSockets = []
+enableSockets.append(1)
+enableSockets.append(2)
+enableSockets.append(3)
+enableSockets.append(4)
+enableSockets.append(5)
+enableSockets.append(6)
+enableSockets.append(7)
+enableSockets.append(8)
+enableSockets.append(9)
+enableSockets.append(10)
+enableSockets.append(11)
+enableSockets.append(12)
+enableSockets.append(13)
+enableSockets.append(14)
+enableSockets.append(15)
+enableSockets.append(16)
+enableSockets.append(37)
+enableSockets.append(38)
+enableSockets.append(39)
