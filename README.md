@@ -16,6 +16,10 @@ This app is still under construction. Layout is not concrete.
 
 Todo:
 
-Work on commenting.
+Work on commenting, Filtration compatibility.
 
-Include BaseTypes.
+Finish BaseTypes.
+
+Default DropLevels.
+
+Add notes, like possible uniques and Divination Card descriptions.
