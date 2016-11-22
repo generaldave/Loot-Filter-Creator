@@ -105,7 +105,7 @@ lifeFlaskComment = "Possible Uniques:\n\n" + \
 ########################################################################
 
 manaFlaskComment = "Possible Uniques:\n\n"                     + \
-                   "Greater Mana Flask = Doedre's Elixier\n"   + \
+                   "Greater Mana Flask = Doedre's Elixir\n"    + \
                    "Grand Mana Flask = Zerphi's Last Breath\n" + \
                    "Sanctified Mana Flask = Lavianga's Spirit"
 

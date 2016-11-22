@@ -66,7 +66,7 @@ class Block(Toplevel):
     # Method sets up GUI
     def setupGUI(self, title):
         self.title(title)
-        self.geometry("515x625")
+        self.geometry("625x625")
 
         # Create GUI Frames
         self.leftFrame     = Frame(self)
@@ -236,7 +236,7 @@ class Block(Toplevel):
                                        self.baseTypeText, \
                                        *self.baseTypeArray, \
                                        command = self.setBaseType)
-        self.baseTypeMenu.config(width = 23)
+        self.baseTypeMenu.config(width = 28)
         self.emptySpace6 = Button(self.rightFrame, \
                                   state = "disabled", \
                                   borderwidth = 0)
@@ -251,7 +251,7 @@ class Block(Toplevel):
                              relief = FLAT)
         self.scrollbar = Scrollbar(self.editFrame)
         self.editArea = Text(self.editFrame, \
-                        width = 39,
+                        width = 50,
                         height = 15, \
                         wrap = "word", \
                         yscrollcommand = self.scrollbar.set, \
@@ -266,7 +266,7 @@ class Block(Toplevel):
                                   borderwidth = 0)
         self.scrollbar2 = Scrollbar(self.commentFrame)
         self.commentArea = Text(self.commentFrame, \
-                           width = 39,
+                           width = 50,
                            height = 15, \
                            wrap = "word", \
                            yscrollcommand = self.scrollbar2.set, \
