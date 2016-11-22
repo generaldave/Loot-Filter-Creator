@@ -15,12 +15,14 @@
 #                                                                      #
 ########################################################################
 
-from tkinter       import *   # For GUI
-from GeneratedText import *   # Loot filter description, headings, etc
-from Variables     import *   # Variables file
-from FileHandler   import *   # Save Loot Filter
-from Block         import *   # Loot filter blocks
-import os                     # Used for clean exiting of app
+from tkinter       import *            # For GUI
+from tkinter       import messagebox   # For messagebox
+from GeneratedText import *            # Loot filter description,
+                                       #      headings, etc
+from Variables     import *            # Variables file
+from FileHandler   import *            # Save Loot Filter
+from Block         import *            # Loot filter blocks
+import os                              # Used for clean exiting of app
 
 #######################################################################
 #                                                                     #
@@ -56,8 +58,10 @@ class LootFilterCreator(object):
         fileMenu.add_command(label = "Exit", command = parent.destroy)
 
         # Create GUI Frames
-        self.leftFrame = Frame(parent)
-        self.rightFrame = Frame(parent)
+        self.leftFrame    = Frame(parent)
+        self.rightFrame   = Frame(parent)
+        self.previewFrame = Frame(self.rightFrame)
+        self.notesFrame   = Frame(self.rightFrame)
 
         # Create Left GUI Widgets
         self.checkButtonsArray = []
@@ -67,14 +71,29 @@ class LootFilterCreator(object):
                                           state = DISABLED))
 
         # Create Right GUI Widgets
-        self.scrollbar = Scrollbar(self.rightFrame)
-        self.editArea = Text(self.rightFrame, \
-                        width = 82,
-                        height = 51, \
+        self.previewLabel = Label(self.rightFrame, \
+                                  text = "Preview:")
+        self.scrollbar = Scrollbar(self.previewFrame)
+        self.editArea = Text(self.previewFrame, \
+                        width = 80,
+                        height = 28, \
                         wrap = "word", \
                         yscrollcommand = self.scrollbar.set, \
                         borderwidth = 1)
         self.scrollbar.config(command = self.editArea.yview)
+        self.emptySpace = Button(self.rightFrame, \
+                                 state = "disabled", \
+                                 borderwidth = 0)
+        self.notesLabel = Label(self.rightFrame, \
+                                text = "Notes:")
+        self.scrollbar2 = Scrollbar(self.notesFrame)
+        self.notesArea = Text(self.notesFrame, \
+                        width = 80,
+                        height = 19, \
+                        wrap = "word", \
+                        yscrollcommand = self.scrollbar2.set, \
+                        borderwidth = 1)
+        self.scrollbar2.config(command = self.notesArea.yview)
 
         # Place File and start menu
         menubar.add_cascade(label = "File", menu = fileMenu)
@@ -89,8 +108,20 @@ class LootFilterCreator(object):
             self.checkButtonsArray[i].pack(anchor = W)
 
         # Place Right GUI Widgets
+        self.previewLabel.pack(side = TOP, anchor = W)
+        self.previewFrame.pack(fill = X)
         self.scrollbar.pack(side = RIGHT, fill = Y)
         self.editArea.pack(side = LEFT, fill = BOTH, expand = True)
+        self.emptySpace.pack(fill = X)
+        self.notesLabel.pack(side = TOP, anchor = W)
+        self.notesFrame.pack(fill = X)
+        self.scrollbar2.pack(side = RIGHT, fill = Y)
+        self.notesArea.pack(side = LEFT, fill = BOTH, expand = True)
+
+        # Display notes
+        self.notesArea.config(state = "normal")
+        self.notesArea.insert(END, startComment)
+        self.notesArea.config(state = "disabled")
 
     # Method exports filter
     def exportFilter(self):
@@ -169,7 +200,7 @@ class LootFilterCreator(object):
 
 # Method closes app without error
 def appClose():
-    if messagebox.askokcancel("Quit", "Are you sure you want to quit?"):
+    if messagebox.askokcancel("Quit", "Did you mean to hit X?"):
         os._exit(0)
 
 # Define main - app handler

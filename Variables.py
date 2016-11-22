@@ -64,7 +64,7 @@ rarities.append("All")
 rarities.append("Unique")
 rarities.append("Rare")
 rarities.append("Magic")
-rarities.append("normal")
+rarities.append("Normal")
 
 # Font size dropdown options
 fontSizes = []

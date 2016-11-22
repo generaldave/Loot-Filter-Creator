@@ -19,6 +19,7 @@ from tkinter              import font   # For fonts
 from Variables            import *      # Variables file
 from BaseTypes            import *      # BaseTypes file
 from GeneratedText        import *      # For comment lines
+from Comments             import *      # For comment textbox
 from tkinter.colorchooser import *      # For choosing colours
 
 ########################################################################
@@ -80,6 +81,8 @@ class Block(Toplevel):
         self.countFrame    = Frame(self.socketFrame)
         self.linkFrame     = Frame(self.socketFrame)
         self.baseTypeFrame = Frame(self.rightFrame)
+        self.editFrame     = Frame(self.rightFrame)
+        self.commentFrame  = Frame(self.rightFrame)
 
         # Create Left GUI Widgets
         self.showHideText = StringVar()
@@ -234,23 +237,42 @@ class Block(Toplevel):
                                        *self.baseTypeArray, \
                                        command = self.setBaseType)
         self.baseTypeMenu.config(width = 23)
+        self.emptySpace6 = Button(self.rightFrame, \
+                                  state = "disabled", \
+                                  borderwidth = 0)
         self.previewText = StringVar(self)
         self.previewText.set("")
-        self.preview = Entry(self.rightFrame, \
+        self.preview = Entry(self.editFrame, \
                              width = 0, \
                              font = self.font, \
                              justify = "center", \
                              textvariable = self.previewText, \
                              highlightthickness = 2, \
                              relief = FLAT)
-        self.scrollbar = Scrollbar(self.rightFrame)
-        self.editArea = Text(self.rightFrame, \
+        self.scrollbar = Scrollbar(self.editFrame)
+        self.editArea = Text(self.editFrame, \
                         width = 39,
-                        height = 37, \
+                        height = 15, \
                         wrap = "word", \
                         yscrollcommand = self.scrollbar.set, \
                         borderwidth = 1)
         self.scrollbar.config(command = self.editArea.yview)
+        self.commentLabelText = StringVar()
+        self.commentLabelText.set("Comments:")
+        self.commentLabel = Label(self.rightFrame, \
+                                  textvariable = self.commentLabelText)
+        self.emptySpace7 = Button(self.rightFrame, \
+                                  state = "disabled", \
+                                  borderwidth = 0)
+        self.scrollbar2 = Scrollbar(self.commentFrame)
+        self.commentArea = Text(self.commentFrame, \
+                           width = 39,
+                           height = 15, \
+                           wrap = "word", \
+                           yscrollcommand = self.scrollbar2.set, \
+                           borderwidth = 1)
+        self.commentArea.config(state = "disabled")
+        self.scrollbar2.config(command = self.editArea.yview)
         
         # Place GUI Frames
         self.leftFrame.pack(side = LEFT, padx = 5)
@@ -303,12 +325,19 @@ class Block(Toplevel):
         self.doneButton.pack(fill = X)
 
         # Place Right Frame GUI Widgets
-        self.baseTypeFrame.pack(fill = X)
+        self.baseTypeFrame.pack(side = TOP, fill = X)
         self.baseTypeMenu.pack(side = RIGHT)
         self.baseTypeLabel.pack(side = RIGHT)
+        self.emptySpace6.pack(fill = X)
         self.preview.pack(side = TOP, anchor = W)
+        self.editFrame.pack(side = TOP, fill = X)
         self.scrollbar.pack(side = RIGHT, fill = Y)
         self.editArea.pack(side = RIGHT, fill = BOTH, expand = True)
+        self.emptySpace7.pack(fill = X)
+        self.commentLabel.pack(anchor = W)
+        self.commentFrame.pack(side = TOP, fill = X)
+        self.scrollbar2.pack(side = RIGHT, fill = Y)
+        self.commentArea.pack(side = RIGHT, fill = BOTH, expand = True)
 
         # Set preview text
         self.previewText.set(headings[self.index].lstrip())
@@ -348,6 +377,10 @@ class Block(Toplevel):
         self.rgbCheckbutton.config(state = 'normal')
         self.setRGB()
         self.setBaseType("All")
+
+        self.commentArea.config(state = "normal")
+        self.commentArea.insert(END, questComment)
+        self.commentArea.config(state = "disabled")
 
         # Disable optoions appropriately
         if (self.index in enableRarity):
