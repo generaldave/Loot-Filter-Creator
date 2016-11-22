@@ -10,7 +10,16 @@
 
 ########################################################################
 #                                                                      #
-#                            Generic                                   #
+#                            IMPORTS                                   #
+#                                                                      #
+########################################################################
+
+from BaseTypes import *           # Used for Divination Cards
+from DivinationRewards import *   # Used for Divination Cards
+
+########################################################################
+#                                                                      #
+#                            GENERIC                                   #
 #                                                                      #
 ########################################################################
 
@@ -82,7 +91,7 @@ labyrinthMapItemComment = "Offering to the Goddess"
 
 ########################################################################
 #                                                                      #
-#                          MAP FRAGMETNS                               #
+#                          MAP FRAGMENTS                               #
 #                                                                      #
 ########################################################################
 
@@ -125,19 +134,19 @@ hybridFlaskComment = "Possible Uniques:\n\n"                        + \
 #                                                                      #
 ########################################################################
 
-utilityFlaskComment = "Possible Uniques:\n\n"                     + \
-                      "Ruby Flask = Coruscating Elixir\n"         + \
-                      "Ruby Flask = Dying Sun\n"                  + \
-                      "Sapphire Flask = Taste of hate\n"          + \
-                      "Silver Flask = Kiara's Determination\n"    + \
-                      "Quartz Flask = Forbidden Taste\n"          + \
-                      "Granite Flask = Lion's Roar\n"             + \
-                      "Granite Flask = Rumi's Concoction\n"       + \
-                      "Sulphur Flask = The Overflowing Chalice\n" + \
-                      "Sulhur Flask = The Sorrow of the Divine\n" + \
-                      "Quicksilver Flask = Rotgut\n"              + \
-                      "Stibnite Flask = Witchfire Brew\n"         + \
-                      "Amethyst Flask = Atziri's Promise\n"       + \
+utilityFlaskComment = "Possible Uniques:\n\n"                       + \
+                      "Ruby Flask = Coruscating Elixir\n"           + \
+                      "Ruby Flask = Dying Sun\n\n"                  + \
+                      "Sapphire Flask = Taste of hate\n\n"          + \
+                      "Silver Flask = Kiara's Determination\n\n"    + \
+                      "Quartz Flask = Forbidden Taste\n\n"          + \
+                      "Granite Flask = Lion's Roar\n"               + \
+                      "Granite Flask = Rumi's Concoction\n\n"       + \
+                      "Sulphur Flask = The Overflowing Chalice\n"   + \
+                      "Sulhur Flask = The Sorrow of the Divine\n\n" + \
+                      "Quicksilver Flask = Rotgut\n\n"              + \
+                      "Stibnite Flask = Witchfire Brew\n\n"         + \
+                      "Amethyst Flask = Atziri's Promise\n\n"       + \
                       "Topaz Flask = Vessel of Vinktar"
 
 
@@ -180,7 +189,10 @@ currencyComment = "N/A"
 #                                                                      #
 ########################################################################
 
-divinationComment = "FIX ME"
+divinationComment = ""
+for i in range(1, len(divinationRewards)):
+    divinationComment = divinationComment + \
+                        divinationBaseTypes[i] + divinationRewards[i]
 
 ########################################################################
 #                                                                      #
