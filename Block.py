@@ -66,7 +66,7 @@ class Block(Toplevel):
     # Method sets up GUI
     def setupGUI(self, title):
         self.title(title)
-        self.geometry("510x625")
+        self.geometry("515x625")
 
         # Create GUI Frames
         self.leftFrame     = Frame(self)
@@ -566,7 +566,7 @@ class Block(Toplevel):
 
     # Method sets border colour
     def setBorderColor(self):
-        color = askcolor()
+        color = askcolor(parent = self)
         self.preview.config(highlightbackground = color[1])   # hex color
         self.borderColor = color[0]                           # rgb color
         self.colorSet = True
@@ -576,7 +576,7 @@ class Block(Toplevel):
 
     # Method sets background colour
     def setBGColor(self):
-        color = askcolor()
+        color = askcolor(parent = self)
         self.preview.config(bg = color[1])   # hex color
         self.bgColor = color[0]              # rgb color
         self.colorSet = True
@@ -586,7 +586,7 @@ class Block(Toplevel):
 
     # Method sets text colour
     def setTextColor(self):
-        color = askcolor()
+        color = askcolor(parent = self)
         self.preview.config(fg = color[1])   # hex color
         self.textColor = color[0]            # rgb color
         self.colorSet = True
