@@ -65,11 +65,11 @@ labyrinthItemComment = "Silver Key\nGolden Key\nTreasure Key"
 #                                                                      #
 ########################################################################
 
-labyrinthTrinketComment = "They will be consumed in the next "      + \
-                          "fight against Izaro and provide a buff " + \
-                          "destroy one of his 3 support mechanics " + \
-                          "or minions very fast. To use it, "       + \
-                          "simply have it in your inventory when "  + \
+labyrinthTrinketComment = "They will be consumed in the next "       + \
+                          "fight against Izaro and provide a buff, " + \
+                          "destroy one of his 3 support mechanics, " + \
+                          "or minions very fast. To use it, "        + \
+                          "simply have it in your inventory when "   + \
                           "entering the arena."
 
 ########################################################################
