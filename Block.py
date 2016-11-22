@@ -66,7 +66,7 @@ class Block(Toplevel):
     # Method sets up GUI
     def setupGUI(self, title):
         self.title(title)
-        self.geometry("625x625")
+        self.geometry("632x625")
 
         # Create GUI Frames
         self.leftFrame     = Frame(self)
@@ -251,7 +251,7 @@ class Block(Toplevel):
                              relief = FLAT)
         self.scrollbar = Scrollbar(self.editFrame)
         self.editArea = Text(self.editFrame, \
-                        width = 50,
+                        width = 57,
                         height = 15, \
                         wrap = "word", \
                         yscrollcommand = self.scrollbar.set, \
@@ -266,7 +266,7 @@ class Block(Toplevel):
                                   borderwidth = 0)
         self.scrollbar2 = Scrollbar(self.commentFrame)
         self.commentArea = Text(self.commentFrame, \
-                           width = 50,
+                           width = 57,
                            height = 15, \
                            wrap = "word", \
                            yscrollcommand = self.scrollbar2.set, \
@@ -631,7 +631,7 @@ class Block(Toplevel):
             self.textColor = (74, 230, 58)
             self.preview.config(fg = "#4AE63A") 
         elif (not self.colorSet and \
-            headings[self.index].lstrip() == "Divination Cards"):
+            headings[self.index].lstrip() == "Divination Card"):
             self.textColor = (170, 230, 230)
             self.preview.config(fg = "#AAE6E6")         
         elif (not self.colorSet and \
