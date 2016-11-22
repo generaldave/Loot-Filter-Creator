@@ -342,6 +342,12 @@ class Block(Toplevel):
         # Set preview text
         self.previewText.set(headings[self.index].lstrip())
 
+        # Set up comments area
+        self.commentArea.config(state = "normal")
+        self.commentArea.delete(1.0, END)
+        self.commentArea.insert(END, commentsArray[self.index])
+        self.commentArea.config(state = "disabled")
+
     # Method returns text
     def getText(self):
         return self.textArray
@@ -376,11 +382,7 @@ class Block(Toplevel):
         self.setLink(str(sockets[0]))
         self.rgbCheckbutton.config(state = 'normal')
         self.setRGB()
-        self.setBaseType("All")
-
-        self.commentArea.config(state = "normal")
-        self.commentArea.insert(END, questComment)
-        self.commentArea.config(state = "disabled")
+        self.setBaseType("All")        
 
         # Disable optoions appropriately
         if (self.index in enableRarity):

@@ -31,7 +31,7 @@ import os                              # Used for clean exiting of app
 #######################################################################
 
 TITLE    = "Loot Filter Creator"   # GUI Title.
-GEOMETRY = "800x800"               # GUI screen size.
+GEOMETRY = "800x850"               # GUI screen size.
 
 #######################################################################
 #                                                                     #
@@ -76,7 +76,7 @@ class LootFilterCreator(object):
         self.scrollbar = Scrollbar(self.previewFrame)
         self.editArea = Text(self.previewFrame, \
                         width = 80,
-                        height = 28, \
+                        height = 29, \
                         wrap = "word", \
                         yscrollcommand = self.scrollbar.set, \
                         borderwidth = 1)
@@ -89,7 +89,7 @@ class LootFilterCreator(object):
         self.scrollbar2 = Scrollbar(self.notesFrame)
         self.notesArea = Text(self.notesFrame, \
                         width = 80,
-                        height = 19, \
+                        height = 20, \
                         wrap = "word", \
                         yscrollcommand = self.scrollbar2.set, \
                         borderwidth = 1)
