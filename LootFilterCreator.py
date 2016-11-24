@@ -45,6 +45,8 @@ class LootFilterCreator(object):
         self.parent = parent
         self.parent.title(TITLE)
         self.parent.geometry(GEOMETRY)
+        image = PhotoImage(file = ICON_PATH)   # Icon
+        self.parent.tk.call('wm', 'iconphoto', self.parent._w, image)
 
         # Create File menu
         menubar = Menu(parent)

@@ -8,11 +8,17 @@
 #                                                                      #
 ########################################################################
 
+import os
+from tkinter import *
+
 # Name for exported loot filter
 FILTER_NAME = "loot.filter"
 
 # Default font size in game
 DEFAULT_FONT = 32
+
+# Path to icon
+ICON_PATH = os.getcwd() + "/images/icon.gif"
 
 # Headings = available item classes
 headings = []
