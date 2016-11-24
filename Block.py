@@ -171,6 +171,7 @@ class Block(Toplevel):
                                    self.linkText, \
                                    *sockets, \
                                    command = self.setLink)
+        self.linkMenu['menu'].entryconfigure(1, state = "disabled")
         self.isRGB = IntVar()
         self.rgbCheckbutton = Checkbutton(self.socketFrame, \
                                           text = "Chromatic?",
@@ -236,7 +237,7 @@ class Block(Toplevel):
                                        self.baseTypeText, \
                                        *self.baseTypeArray, \
                                        command = self.setBaseType)
-        self.baseTypeMenu.config(width = 28)
+        self.baseTypeMenu.config(width = 32)
         self.emptySpace6 = Button(self.rightFrame, \
                                   state = "disabled", \
                                   borderwidth = 0)
@@ -272,7 +273,7 @@ class Block(Toplevel):
                            yscrollcommand = self.scrollbar2.set, \
                            borderwidth = 1)
         self.commentArea.config(state = "disabled")
-        self.scrollbar2.config(command = self.editArea.yview)
+        self.scrollbar2.config(command = self.commentArea.yview)
         
         # Place GUI Frames
         self.leftFrame.pack(side = LEFT, padx = 5)
