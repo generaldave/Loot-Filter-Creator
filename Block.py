@@ -67,6 +67,8 @@ class Block(Toplevel):
     def setupGUI(self, title):
         self.title(title)
         self.geometry("632x625")
+        image = PhotoImage(file = ICON_PATH)   # Icon
+        self.tk.call('wm', 'iconphoto', self._w, image)
 
         # Create GUI Frames
         self.leftFrame     = Frame(self)
