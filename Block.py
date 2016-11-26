@@ -687,5 +687,7 @@ class Block(Toplevel):
             return currencyBaseTypes
         elif (self.index == 14):
             return divinationBaseTypes
+        elif (self.index == 18):
+            return bodyArmourBaseTypes
         else:
             return ["All"]

@@ -290,3 +290,120 @@ divinationBaseTypes.append("The Wind")                    # 161
 divinationBaseTypes.append("The Wolf")                    # 162
 divinationBaseTypes.append("The Wolf's Shadow")           # 163
 divinationBaseTypes.append("The Wrath")                   # 164
+
+########################################################################
+#                                                                      #
+#                            BODY ARMOURS                              #
+#                                                                      #
+########################################################################
+
+bodyArmourBaseTypes = []
+bodyArmourBaseTypes.append("All")                   # 0
+# Strength
+bodyArmourBaseTypes.append("Plate Vest")            # 1
+bodyArmourBaseTypes.append("Chestplate")            # 2
+bodyArmourBaseTypes.append("Copper Plate")          # 3
+bodyArmourBaseTypes.append("War Plate")             # 4
+bodyArmourBaseTypes.append("Full Plate")            # 5
+bodyArmourBaseTypes.append("Arena Plate")           # 6
+bodyArmourBaseTypes.append("Lordly Plate")          # 7
+bodyArmourBaseTypes.append("Bronze Plate")          # 8
+bodyArmourBaseTypes.append("Battle Plate")          # 9
+bodyArmourBaseTypes.append("Sun Plate")             # 10
+bodyArmourBaseTypes.append("Colosseum Plate")       # 11
+bodyArmourBaseTypes.append("Majestic Plate")        # 12
+bodyArmourBaseTypes.append("Golden Plate")          # 13
+bodyArmourBaseTypes.append("Crusader Plate")        # 14
+bodyArmourBaseTypes.append("Astral Plate")          # 15
+bodyArmourBaseTypes.append("Gladiator Plate")       # 16
+bodyArmourBaseTypes.append("Glorious Plate")        # 17
+# Dexterity
+bodyArmourBaseTypes.append("Shabby Jerkin")         # 18
+bodyArmourBaseTypes.append("Strapped Leather")      # 19
+bodyArmourBaseTypes.append("Buckskin Tunic")        # 20
+bodyArmourBaseTypes.append("Wild Leather")          # 21
+bodyArmourBaseTypes.append("Full Leather")          # 22
+bodyArmourBaseTypes.append("Sun Leather")           # 23
+bodyArmourBaseTypes.append("Thief's Garb")          # 24
+bodyArmourBaseTypes.append("Eleskin Tunic")         # 25
+bodyArmourBaseTypes.append("Frontier Leather")      # 26
+bodyArmourBaseTypes.append("Glorious Leather")      # 27
+bodyArmourBaseTypes.append("Coronal Leather")       # 28
+bodyArmourBaseTypes.append("Cutthroat's Garb")      # 29
+bodyArmourBaseTypes.append("Sharkskin Tunic")       # 30
+bodyArmourBaseTypes.append("Destiny Leather")       # 31
+bodyArmourBaseTypes.append("Exquisite Leather")     # 32
+bodyArmourBaseTypes.append("Zodiac Leather")        # 33
+bodyArmourBaseTypes.append("Assassin's Garb")       # 34
+# Energy Shield
+bodyArmourBaseTypes.append("Simple Robe")           # 35
+bodyArmourBaseTypes.append("Silken Vest")           # 36
+bodyArmourBaseTypes.append("Scholar's Robe")        # 37
+bodyArmourBaseTypes.append("Silken Garb")           # 38
+bodyArmourBaseTypes.append("Mage's Vestment")       # 39
+bodyArmourBaseTypes.append("Silk Robe")             # 40
+bodyArmourBaseTypes.append("Cabalist Regalia")      # 41
+bodyArmourBaseTypes.append("Sage's Robe")           # 42
+bodyArmourBaseTypes.append("Silken Wrap")           # 43
+bodyArmourBaseTypes.append("Conjurer's Vestment")   # 44
+bodyArmourBaseTypes.append("Spidersilk Robe")       # 45
+bodyArmourBaseTypes.append("Destroyer Regalia")     # 46
+bodyArmourBaseTypes.append("Savant's Robe")         # 47
+bodyArmourBaseTypes.append("Necromancer Silks")     # 48
+bodyArmourBaseTypes.append("Occultist's Vestment")  # 49
+bodyArmourBaseTypes.append("Widowsilk Robe")        # 50
+bodyArmourBaseTypes.append("Vaal Regalia")          # 51
+# Strength / Dexterity
+bodyArmourBaseTypes.append("Scale Vest")            # 52
+bodyArmourBaseTypes.append("Light Brigandine")      # 53
+bodyArmourBaseTypes.append("Scale Doublet")         # 54
+bodyArmourBaseTypes.append("Infantry Brigandine")   # 55
+bodyArmourBaseTypes.append("Full Scale Armour")     # 56
+bodyArmourBaseTypes.append("Soldier's Brigandine")  # 57
+bodyArmourBaseTypes.append("Field Lamellar")        # 58
+bodyArmourBaseTypes.append("Wyrmscale Doublet")     # 59
+bodyArmourBaseTypes.append("Hussar Brigandine")     # 60
+bodyArmourBaseTypes.append("Full Wyrmscale")        # 61
+bodyArmourBaseTypes.append("Commander's Brigandine")# 62
+bodyArmourBaseTypes.append("Battle Lamellar")       # 63
+bodyArmourBaseTypes.append("Dragonscale Doubelt")   # 64
+bodyArmourBaseTypes.append("Desert Brigandine")     # 65
+bodyArmourBaseTypes.append("Full Dragonscale")      # 66
+bodyArmourBaseTypes.append("General's Brigandine")  # 67
+bodyArmourBaseTypes.append("Triumphant Lamellar")   # 68
+# Strength / Intelligence
+bodyArmourBaseTypes.append("Chainmail Vest")        # 69
+bodyArmourBaseTypes.append("Chainmail Tunic")       # 70
+bodyArmourBaseTypes.append("Ringmail Coat")         # 71
+bodyArmourBaseTypes.append("Chainmail Doublet")     # 72
+bodyArmourBaseTypes.append("Full Ringmail")         # 73
+bodyArmourBaseTypes.append("Full Chainmail")        # 74
+bodyArmourBaseTypes.append("Holy Chainmail")        # 75
+bodyArmourBaseTypes.append("Latticed Ringmail")     # 76
+bodyArmourBaseTypes.append("Crusader Chainmail")    # 77
+bodyArmourBaseTypes.append("Ornate Ringmail")       # 78
+bodyArmourBaseTypes.append("Chain Hauberk")         # 79
+bodyArmourBaseTypes.append("Devout Chainmail")      # 80
+bodyArmourBaseTypes.append("Loricated Ringmail")    # 81
+bodyArmourBaseTypes.append("Conquest Chainmail")    # 82
+bodyArmourBaseTypes.append("Elegant Ringmail")      # 83
+bodyArmourBaseTypes.append("Saint's Hauberk")       # 84
+bodyArmourBaseTypes.append("Saintly Chainmail")     # 85
+# Dexterity / Intelligence
+bodyArmourBaseTypes.append("Padded Vest")           # 86
+bodyArmourBaseTypes.append("Oiled Vest")            # 87
+bodyArmourBaseTypes.append("Padded Jacket")         # 88
+bodyArmourBaseTypes.append("Oiled Coat")            # 89
+bodyArmourBaseTypes.append("Scarlet Raiment")       # 90
+bodyArmourBaseTypes.append("Waxed Garb")            # 91
+bodyArmourBaseTypes.append("Bone Armour")           # 92
+bodyArmourBaseTypes.append("Quilted Jacket")        # 93
+bodyArmourBaseTypes.append("Sleek Coat")            # 94
+bodyArmourBaseTypes.append("Crimson Raiment")       # 95
+bodyArmourBaseTypes.append("Lacquered Garb")        # 96
+bodyArmourBaseTypes.append("Crypt Armour")          # 97
+bodyArmourBaseTypes.append("Sentinel Jacket")       # 98
+bodyArmourBaseTypes.append("Varnished Coat")        # 99
+bodyArmourBaseTypes.append("Blood Raiment")         # 100
+bodyArmourBaseTypes.append("Sadist Garb")           # 101
+bodyArmourBaseTypes.append("Carnal Armour")         # 102
