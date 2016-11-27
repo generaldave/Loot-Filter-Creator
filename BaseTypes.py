@@ -407,3 +407,246 @@ bodyArmourBaseTypes.append("Varnished Coat")        # 99
 bodyArmourBaseTypes.append("Blood Raiment")         # 100
 bodyArmourBaseTypes.append("Sadist Garb")           # 101
 bodyArmourBaseTypes.append("Carnal Armour")         # 102
+
+########################################################################
+#                                                                      #
+#                           TWO HAND SWORDS                            #
+#                                                                      #
+########################################################################
+
+twoHandSwordBaseTypes = []
+twoHandSwordBaseTypes.append("All")                 # 0
+twoHandSwordBaseTypes.append("Corroded Blade")      # 1
+twoHandSwordBaseTypes.append("Longsword")           # 2
+twoHandSwordBaseTypes.append("Bastard Sword")       # 3
+twoHandSwordBaseTypes.append("Two-Handed Sword")    # 4
+twoHandSwordBaseTypes.append("Etched Greatsword")   # 5
+twoHandSwordBaseTypes.append("Ornate Sword")        # 6
+twoHandSwordBaseTypes.append("Spectral Sword")      # 7
+twoHandSwordBaseTypes.append("Curved Blade")        # 8
+twoHandSwordBaseTypes.append("Butcher Sword")       # 9
+twoHandSwordBaseTypes.append("Footman Sword")       # 10
+twoHandSwordBaseTypes.append("Highland Blade")      # 11
+twoHandSwordBaseTypes.append("Engraved Greatsword") # 12
+twoHandSwordBaseTypes.append("Tiger Sword")         # 13
+twoHandSwordBaseTypes.append("Wraith Sword")        # 14
+twoHandSwordBaseTypes.append("Lithe Blade")         # 15
+twoHandSwordBaseTypes.append("Headman's Sword")     # 16
+twoHandSwordBaseTypes.append("Reaver Sword")        # 17
+twoHandSwordBaseTypes.append("Ezomyte Blade")       # 18
+twoHandSwordBaseTypes.append("Vaal Greatsword")     # 19
+twoHandSwordBaseTypes.append("Lion Sword")          # 20
+twoHandSwordBaseTypes.append("Infernal Sword")      # 21
+twoHandSwordBaseTypes.append("Exquisite Blade")     # 22
+
+########################################################################
+#                                                                      #
+#                            TWO HAND AXES                             #
+#                                                                      #
+########################################################################
+
+twoHandAxeBaseTypes = []
+twoHandAxeBaseTypes.append("All")            # 0
+twoHandAxeBaseTypes.append("Stone Axe")      # 1
+twoHandAxeBaseTypes.append("Jade Chopper")   # 2
+twoHandAxeBaseTypes.append("Woodsplitter")   # 3
+twoHandAxeBaseTypes.append("Poleaxe")        # 4
+twoHandAxeBaseTypes.append("Double Axe")     # 5
+twoHandAxeBaseTypes.append("Gilded Axe")     # 6
+twoHandAxeBaseTypes.append("Shadow Axe")     # 7
+twoHandAxeBaseTypes.append("Dagger Axe")     # 8
+twoHandAxeBaseTypes.append("Jasper Chopper") # 9
+twoHandAxeBaseTypes.append("Timber Axe")     # 10
+twoHandAxeBaseTypes.append("Headsman Axe")   # 11
+twoHandAxeBaseTypes.append("Labrys")         # 12
+twoHandAxeBaseTypes.append("Noble Axe")      # 13
+twoHandAxeBaseTypes.append("Abyssal Axe")    # 14
+twoHandAxeBaseTypes.append("Karui Chopper")  # 15
+twoHandAxeBaseTypes.append("Talon Axe")      # 16
+twoHandAxeBaseTypes.append("Sundering Axe")  # 17
+twoHandAxeBaseTypes.append("Ezomyte Axe")    # 18
+twoHandAxeBaseTypes.append("Vaal Axe")       # 19
+twoHandAxeBaseTypes.append("Despot Axe")     # 20
+twoHandAxeBaseTypes.append("Void Axe")       # 21
+twoHandAxeBaseTypes.append("Fleshripper")    # 22
+
+########################################################################
+#                                                                      #
+#                            TWO HAND MACES                            #
+#                                                                      #
+########################################################################
+
+twoHandMaceBaseTypes = []
+twoHandMaceBaseTypes.append("All")             # 0
+twoHandMaceBaseTypes.append("Driftwood Maul")  # 1
+twoHandMaceBaseTypes.append("Tribal Maul")     # 2
+twoHandMaceBaseTypes.append("Mallet")          # 3
+twoHandMaceBaseTypes.append("Sledgehammer")    # 4
+twoHandMaceBaseTypes.append("Jagge Maul")      # 5
+twoHandMaceBaseTypes.append("Brass Maul")      # 6
+twoHandMaceBaseTypes.append("Fright Maul")     # 7
+twoHandMaceBaseTypes.append("Morning Star")    # 8
+twoHandMaceBaseTypes.append("Totemic Maul")    # 9
+twoHandMaceBaseTypes.append("Great Maul")      # 10
+twoHandMaceBaseTypes.append("Steelhead")       # 11
+twoHandMaceBaseTypes.append("Spiny Maul")      # 12
+twoHandMaceBaseTypes.append("Plated Maul")     # 13
+twoHandMaceBaseTypes.append("Dread Maul")      # 14
+twoHandMaceBaseTypes.append("Solar Maul")      # 15
+twoHandMaceBaseTypes.append("Karui Maul")      # 16
+twoHandMaceBaseTypes.append("Colossus Mallet") # 17
+twoHandMaceBaseTypes.append("Piledriver")      # 18
+twoHandMaceBaseTypes.append("Meatgrinder")     # 19
+twoHandMaceBaseTypes.append("Imperial Maul")   # 20
+twoHandMaceBaseTypes.append("Terror Maul")     # 21
+twoHandMaceBaseTypes.append("Coronal Maul")    # 22
+
+########################################################################
+#                                                                      #
+#                                 BOWS                                 #
+#                                                                      #
+########################################################################
+
+bowBaseTypes = []
+bowBaseTypes.append("All")            # 0
+bowBaseTypes.append("Crude Bow")      # 1
+bowBaseTypes.append("Short Bow")      # 2
+bowBaseTypes.append("Long Bow")       # 3
+bowBaseTypes.append("Composite Bow")  # 4
+bowBaseTypes.append("Recurve Bow")    # 5
+bowBaseTypes.append("Bone Bow")       # 6
+bowBaseTypes.append("Royal Bow")      # 7
+bowBaseTypes.append("Death Bow")      # 8
+bowBaseTypes.append("Grove Bow")      # 9
+bowBaseTypes.append("Reflex Bow")     # 10
+bowBaseTypes.append("Decurve Bow")    # 11
+bowBaseTypes.append("Compound Bow")   # 12
+bowBaseTypes.append("Sniper Bow")     # 13
+bowBaseTypes.append("Ivory Bow")      # 14
+bowBaseTypes.append("highborn Bow")   # 15
+bowBaseTypes.append("Decimation Bow") # 16
+bowBaseTypes.append("Thicket Bow")    # 17
+bowBaseTypes.append("Steelwood Bow")  # 18
+bowBaseTypes.append("Citadel Bow")    # 19
+bowBaseTypes.append("Ranger Bow")     # 20
+bowBaseTypes.append("Assassin Bow")   # 21
+bowBaseTypes.append("Spine Bow")      # 22
+bowBaseTypes.append("imperial Bow")   # 23
+bowBaseTypes.append("Harbinger Bow")  # 24
+bowBaseTypes.append("Makareth Bow")   # 25
+
+########################################################################
+#                                                                      #
+#                                STAVES                                #
+#                                                                      #
+########################################################################
+
+staffBaseTypes = []
+staffBaseTypes.append("All")              # 0
+staffBaseTypes.append("Gnarled Branch")   # 1
+staffBaseTypes.append("Primitive Staff")  # 2
+staffBaseTypes.append("Long Staff")       # 3
+staffBaseTypes.append("Iron Staff")       # 4
+staffBaseTypes.append("Coiled Staff")     # 5
+staffBaseTypes.append("Royal Staff")      # 6
+staffBaseTypes.append("Vile Staff")       # 7
+staffBaseTypes.append("Crescent Staff")   # 8
+staffBaseTypes.append("Woodfull Staff")   # 9
+staffBaseTypes.append("Quarterstaff")     # 10
+staffBaseTypes.append("Military Staff")   # 11
+staffBaseTypes.append("Serpentine Staff") # 12
+staffBaseTypes.append("Highborn Staff")   # 13
+staffBaseTypes.append("Fould Staff")      # 14
+staffBaseTypes.append("Moon Staff")       # 15
+staffBaseTypes.append("Primordial Staff") # 16
+staffBaseTypes.append("Lathi")            # 17
+staffBaseTypes.append("Exomyte Staff")    # 18
+staffBaseTypes.append("Maelstrom Staff")  # 19
+staffBaseTypes.append("Imperial Staff")   # 20
+staffBaseTypes.append("Judgement Staff")  # 21
+staffBaseTypes.append("Eclipse Staff")    # 22
+
+########################################################################
+#                                                                      #
+#                                QUIVERS                               #
+#                                                                      #
+########################################################################
+
+quiverBaseTypes = []
+quiverBaseTypes.append("All")                      # 0
+quiverBaseTypes.append("Serrated Arrow Quiver")    # 1
+quiverBaseTypes.append("Two-Point Arrow Quiver")   # 2
+quiverBaseTypes.append("Sharktooth Arrow Quiver")  # 3
+quiverBaseTypes.append("Blunt Arrow Quiver")       # 4
+quiverBaseTypes.append("Fire Arrow Quiver")        # 5
+quiverBaseTypes.append("Broadhead Arrow Quiver")   # 6
+quiverBaseTypes.append("Penetrating Arrow Quiver") # 7
+quiverBaseTypes.append("Spike-Point Arrow Quiver") # 8
+
+########################################################################
+#                                                                      #
+#                                 CLAWS                                #
+#                                                                      #
+########################################################################
+
+clawBaseTypes = []
+clawBaseTypes.append("All")              # 0
+clawBaseTypes.append("Nailed Fist")      # 1
+clawBaseTypes.append("Sharktooth Claw")  # 2
+clawBaseTypes.append("Awl")              # 3
+clawBaseTypes.append("Cat's Paw")        # 4
+clawBaseTypes.append("Blinder")          # 5
+clawBaseTypes.append("Timeworn Claw")    # 6
+clawBaseTypes.append("Sparkling Claw")   # 7
+clawBaseTypes.append("Fright Claw")      # 8
+clawBaseTypes.append("Double Claw")      # 9
+clawBaseTypes.append("Thresher Claw")    # 10
+clawBaseTypes.append("Gouger")           # 11
+clawBaseTypes.append("Tiger's Paw")      # 12
+clawBaseTypes.append("Gut Ripper")       # 13
+clawBaseTypes.append("Prehistoric Claw") # 14
+clawBaseTypes.append("Noble Claw")       # 15
+clawBaseTypes.append("Eagle Claw")       # 16
+clawBaseTypes.append("Twin Claw")        # 17
+clawBaseTypes.append("Great White Claw") # 18
+clawBaseTypes.append("Throat Stabber")   # 19
+clawBaseTypes.append("Hellion's Paw")    # 20
+clawBaseTypes.append("Eye Gouger")       # 21
+clawBaseTypes.append("Vaal Claw")        # 22
+clawBaseTypes.append("Imperial Claw")    # 23
+clawBaseTypes.append("Terror Claw")      # 24
+clawBaseTypes.append("Gemini Claw")      # 25
+
+########################################################################
+#                                                                      #
+#                                DAGGERS                               #
+#                                                                      #
+########################################################################
+
+daggerBaseTypes = []
+daggerBaseTypes.append("All")             # 0
+daggerBaseTypes.append("Glass Shank")     # 1
+daggerBaseTypes.append("Skinning Knife")  # 2
+daggerBaseTypes.append("Carving Knife")   # 3
+daggerBaseTypes.append("Stiletto")        # 4
+daggerBaseTypes.append("Boot Knife")      # 5
+daggerBaseTypes.append("Copper Kris")     # 6
+daggerBaseTypes.append("Skean")           # 7
+daggerBaseTypes.append("Imp Dagger")      # 8
+daggerBaseTypes.append("Flaying Knife")   # 9
+daggerBaseTypes.append("Prong Dagger")    # 10
+daggerBaseTypes.append("Butcher Knife")   # 11
+daggerBaseTypes.append("Poignard")        # 12
+daggerBaseTypes.append("Boot Blade")      # 13
+daggerBaseTypes.append("Golden Kris")     # 14
+daggerBaseTypes.append("Royal Skean")     # 15
+daggerBaseTypes.append("Fiend Dagger")    # 16
+daggerBaseTypes.append("Trisula")         # 17
+daggerBaseTypes.append("Gutting Knife")   # 18
+daggerBaseTypes.append("Slaughter Knife") # 19
+daggerBaseTypes.append("Ambusher")        # 20
+daggerBaseTypes.append("Ezomyte Dagger")  # 21
+daggerBaseTypes.append("Platinum kris")   # 22
+daggerBaseTypes.append("Imperial Skean")  # 23
+daggerBaseTypes.append("Demon Dagger")    # 24
+daggerBaseTypes.append("Sai")             # 25

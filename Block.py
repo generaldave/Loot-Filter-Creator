@@ -689,5 +689,21 @@ class Block(Toplevel):
             return divinationBaseTypes
         elif (self.index == 18):
             return bodyArmourBaseTypes
+        elif (self.index == 19):
+            return twoHandSwordBaseTypes
+        elif (self.index == 20):
+            return twoHandAxeBaseTypes
+        elif (self.index == 21):
+            return twoHandMaceBaseTypes
+        elif (self.index == 22):
+            return bowBaseTypes
+        elif (self.index == 23):
+            return staffBaseTypes
+        elif (self.index == 24):
+            return quiverBaseTypes
+        elif (self.index == 25):
+            return clawBaseTypes
+        elif (self.index == 26):
+            return daggerBaseTypes
         else:
             return ["All"]
