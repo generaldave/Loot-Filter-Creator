@@ -705,5 +705,13 @@ class Block(Toplevel):
             return clawBaseTypes
         elif (self.index == 26):
             return daggerBaseTypes
+        elif (self.index == 27):
+            return wandBaseTypes
+        elif (self.index == 28):
+            return oneHandSwordBaseTypes
+        elif (self.index == 29):
+            return thrustingOneHandSwordBaseTypes
+        elif (self.index == 30):
+            return oneHandAxeBaseTypes
         else:
             return ["All"]

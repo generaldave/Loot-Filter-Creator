@@ -650,3 +650,133 @@ daggerBaseTypes.append("Platinum kris")   # 22
 daggerBaseTypes.append("Imperial Skean")  # 23
 daggerBaseTypes.append("Demon Dagger")    # 24
 daggerBaseTypes.append("Sai")             # 25
+
+########################################################################
+#                                                                      #
+#                                 WANDS                                #
+#                                                                      #
+########################################################################
+
+wandBaseTypes = []
+wandBaseTypes.append("All")            # 0
+wandBaseTypes.append("Driftwood Wand") # 1
+wandBaseTypes.append("Goat's Horn")    # 2
+wandBaseTypes.append("Carved Wand")    # 3
+wandBaseTypes.append("Quartz Wand")    # 4
+wandBaseTypes.append("Spiraled Wand")  # 5
+wandBaseTypes.append("Sage Wand")      # 6
+wandBaseTypes.append("Pagan Wand")     # 7
+wandBaseTypes.append("Faun's Horn")    # 8
+wandBaseTypes.append("Engraved Wand")  # 9
+wandBaseTypes.append("Crystal Wand")   # 10
+wandBaseTypes.append("Serpent Wand")   # 11
+wandBaseTypes.append("Omen Wand")      # 12
+wandBaseTypes.append("Heathen Wand")   # 13
+wandBaseTypes.append("Demon's Horn")   # 14
+wandBaseTypes.append("Imbued Wand")    # 15
+wandBaseTypes.append("Opal Wand")      # 16
+wandBaseTypes.append("Tornado Wand")   # 17
+wandBaseTypes.append("Prophecy Wand")  # 18
+wandBaseTypes.append("Profane Wand")   # 19
+
+########################################################################
+#                                                                      #
+#                            ONE HAND SWORDS                           #
+#                                                                      #
+########################################################################
+
+oneHandSwordBaseTypes = []
+oneHandSwordBaseTypes.append("All")              # 0
+oneHandSwordBaseTypes.append("Rusted Sword")     # 1
+oneHandSwordBaseTypes.append("Copper Sword")     # 2
+oneHandSwordBaseTypes.append("Sabre")            # 3
+oneHandSwordBaseTypes.append("Broad Sword")      # 4
+oneHandSwordBaseTypes.append("War Sword")        # 5
+oneHandSwordBaseTypes.append("Ancient Sword")    # 6
+oneHandSwordBaseTypes.append("Elegant Sword")    # 7
+oneHandSwordBaseTypes.append("Dusk Blade")       # 8
+oneHandSwordBaseTypes.append("Hook Sword")       # 9
+oneHandSwordBaseTypes.append("Variscite Blade")  # 10
+oneHandSwordBaseTypes.append("Cutlass")          # 11
+oneHandSwordBaseTypes.append("Baselard")         # 12
+oneHandSwordBaseTypes.append("Battle Sword")     # 13
+oneHandSwordBaseTypes.append("Elder Sword")      # 14
+oneHandSwordBaseTypes.append("Graceful Sword")   # 15
+oneHandSwordBaseTypes.append("Twilight Blade")   # 16
+oneHandSwordBaseTypes.append("Grappler")         # 17
+oneHandSwordBaseTypes.append("Gemstone Sword")   # 18
+oneHandSwordBaseTypes.append("Corsair Sword")    # 19
+oneHandSwordBaseTypes.append("Gladius")          # 20
+oneHandSwordBaseTypes.append("Legion Sword")     # 21
+oneHandSwordBaseTypes.append("Vaal Blade")       # 22
+oneHandSwordBaseTypes.append("Eternal Sword")    # 23
+oneHandSwordBaseTypes.append("Midnight Blade")   # 24
+oneHandSwordBaseTypes.append("Tiger Hook")       # 25
+
+########################################################################
+#                                                                      #
+#                       THRUSTING ONE HAND SWORDS                      #
+#                                                                      #
+########################################################################
+
+thrustingOneHandSwordBaseTypes = []
+thrustingOneHandSwordBaseTypes.append("All")               # 0
+thrustingOneHandSwordBaseTypes.append("Rusted Spike")      # 1
+thrustingOneHandSwordBaseTypes.append("Whalebone Rapier")  # 2
+thrustingOneHandSwordBaseTypes.append("Battered Foil")     # 3
+thrustingOneHandSwordBaseTypes.append("Basket Rapier")     # 4
+thrustingOneHandSwordBaseTypes.append("Jagged Foil")       # 5
+thrustingOneHandSwordBaseTypes.append("Antique Rapier")    # 6
+thrustingOneHandSwordBaseTypes.append("Elegant Foil")      # 7
+thrustingOneHandSwordBaseTypes.append("Thorn Rapier")      # 8
+thrustingOneHandSwordBaseTypes.append("Smallsword")        # 9
+thrustingOneHandSwordBaseTypes.append("Wyrmbone Rapier")   # 10
+thrustingOneHandSwordBaseTypes.append("Burnished Foil")    # 11
+thrustingOneHandSwordBaseTypes.append("Estoc")             # 12
+thrustingOneHandSwordBaseTypes.append("Serrated Foil")     # 13
+thrustingOneHandSwordBaseTypes.append("Primeval Rapier")   # 14
+thrustingOneHandSwordBaseTypes.append("Fancy Foil")        # 15
+thrustingOneHandSwordBaseTypes.append("Apex Rapier")       # 16
+thrustingOneHandSwordBaseTypes.append("Courtesan Sword")   # 17
+thrustingOneHandSwordBaseTypes.append("Dragonbone Rapier") # 18
+thrustingOneHandSwordBaseTypes.append("Tempered Foil")     # 19
+thrustingOneHandSwordBaseTypes.append("Pecoraro")          # 20
+thrustingOneHandSwordBaseTypes.append("Spiraled Foil")     # 21
+thrustingOneHandSwordBaseTypes.append("Vaal Rapier")       # 22
+thrustingOneHandSwordBaseTypes.append("Jewelled Foil")     # 23
+thrustingOneHandSwordBaseTypes.append("Harpy Rapier")      # 24
+thrustingOneHandSwordBaseTypes.append("Dragon Sword")      # 25
+
+########################################################################
+#                                                                      #
+#                             ONE HAND AXES                            #
+#                                                                      #
+########################################################################
+
+oneHandAxeBaseTypes = []
+oneHandAxeBaseTypes.append("All")              # 0
+oneHandAxeBaseTypes.append("Rusted Hatchet")   # 1
+oneHandAxeBaseTypes.append("Jade Hatchet")     # 2
+oneHandAxeBaseTypes.append("Boarding Axe")     # 3
+oneHandAxeBaseTypes.append("Cleaver")          # 4
+oneHandAxeBaseTypes.append("Broad Axe")        # 5
+oneHandAxeBaseTypes.append("Arming Axe")       # 6
+oneHandAxeBaseTypes.append("Decorative Axe")   # 7
+oneHandAxeBaseTypes.append("Spectral Axe")     # 8
+oneHandAxeBaseTypes.append("Etched Hatchet")   # 9
+oneHandAxeBaseTypes.append("Jasper Axe")       # 10
+oneHandAxeBaseTypes.append("Tomahawk")         # 11
+oneHandAxeBaseTypes.append("Wrist Chopper")    # 12
+oneHandAxeBaseTypes.append("War Axe")          # 13
+oneHandAxeBaseTypes.append("Chest Splitter")   # 14
+oneHandAxeBaseTypes.append("Ceremonail Axe")   # 15
+oneHandAxeBaseTypes.append("Wraith Axe")       # 16
+oneHandAxeBaseTypes.append("Engraved Hatchet") # 17
+oneHandAxeBaseTypes.append("Karui Axe")        # 18
+oneHandAxeBaseTypes.append("Siege Axe")        # 19
+oneHandAxeBaseTypes.append("Reave Axe")        # 20
+oneHandAxeBaseTypes.append("Butcher Axe")      # 21
+oneHandAxeBaseTypes.append("Vaal Hatchet")     # 22
+oneHandAxeBaseTypes.append("Royal Axe")        # 23
+oneHandAxeBaseTypes.append("Infernal Axe")     # 24
+oneHandAxeBaseTypes.append("Runic Hatchet")    # 25
