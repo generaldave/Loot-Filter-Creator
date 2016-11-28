@@ -17,6 +17,7 @@
 
 from tkinter       import *            # For GUI
 from tkinter       import messagebox   # For messagebox
+from MenuBar       import *            # For File Menu
 from GeneratedText import *            # Loot filter description,
                                        #      headings, etc
 from Variables     import *            # Variables file
@@ -48,16 +49,8 @@ class LootFilterCreator(object):
         image = PhotoImage(file = ICON_PATH)   # Icon
         self.parent.tk.call('wm', 'iconphoto', self.parent._w, image)
 
-        # Create File menu
-        menubar = Menu(parent)
-        fileMenu = Menu(menubar)
-        fileMenu.add_command(label = "New", \
-                             command = self.createFilter)
-        fileMenu.add_separator()
-        fileMenu.add_command(label = "Export", \
-                             command = self.exportFilter)
-        fileMenu.add_separator()
-        fileMenu.add_command(label = "Exit", command = parent.destroy)
+        # Create File Menu
+        self.parent.fileMenu = MenuBar(self, self.parent)
 
         # Create GUI Frames
         self.leftFrame    = Frame(parent)
@@ -96,10 +89,6 @@ class LootFilterCreator(object):
                         yscrollcommand = self.scrollbar2.set, \
                         borderwidth = 1)
         self.scrollbar2.config(command = self.notesArea.yview)
-
-        # Place File and start menu
-        menubar.add_cascade(label = "File", menu = fileMenu)
-        parent.config(menu = menubar)
 
         # Place GUI Frames
         self.leftFrame.pack(side = LEFT, padx = 5)
@@ -202,7 +191,8 @@ class LootFilterCreator(object):
 
 # Method closes app without error
 def appClose():
-    if messagebox.askokcancel("Quit", "Did you mean to hit X?"):
+    result = messagebox.askyesno("Quit", "Did you mean to hit X?")
+    if result == True:
         os._exit(0)
 
 # Define main - app handler
