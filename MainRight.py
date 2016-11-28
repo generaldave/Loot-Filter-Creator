@@ -81,7 +81,9 @@ class MainRight(object):
 
     # Method clears editArea Text
     def clearEditArea(self):
+        self.editArea.config(state = "normal")
         self.editArea.delete(1.0, END)
+        self.editArea.config(state = "disabled")
         
     # Method changes editArea Text
     def editAreaInsert(self, value):

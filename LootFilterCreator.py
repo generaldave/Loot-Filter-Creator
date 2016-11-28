@@ -48,6 +48,7 @@ class LootFilterCreator(object):
         self.parent = parent
         self.parent.title(TITLE)
         self.parent.geometry(GEOMETRY)
+        self.parent.resizable(0, 0)   # Not-resizable
         image = PhotoImage(file = ICON_PATH)   # Icon
         self.parent.tk.call('wm', 'iconphoto', self.parent._w, image)
 

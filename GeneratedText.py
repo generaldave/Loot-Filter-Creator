@@ -66,6 +66,7 @@ class GeneratedText(object):
 
     # Method begins description
     def createDescription(self):
+        self.text = ""
         line1 = "# Path of Exile Loot Filter generated with generaldave's"
         line1 = self.lineFiller(line1)
 
