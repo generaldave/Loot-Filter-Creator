@@ -1,31 +1,114 @@
-Quest Items,alira's Amulet,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Allflame,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Ammonite Glyph,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Baleful Gem,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Bust of Gaius Sentari,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Bust of Hector Titucius,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Bust of Marceus Lioneye,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Chitus' Plum,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Decanter Spiritus,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Deshret's Banner,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Golden Hand,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Golden Page,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Haliotis Glyph,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Infernal Talc,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Kraityn's Amulet,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Malachai's Entrails,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Malachai's Heart,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Malachai's Lungs,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Maligaro's Spike,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Medicine Chest,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Oak's Amulet,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Ribbon Spool,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Roseus Glyph,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Sewer Keys,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Thaumetic Emblem,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,The Apex,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,The Eye of Desire,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,The Eye of Fury,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Tolman's Bracelet,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
-Quest Items,Tower Key,All,All,All,All,None,None,None,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,All,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Alira's Amulet,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Allflame,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Ammonite Glyph,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Baleful Gem,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Bust of Gaius Sentari,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Bust of Hector Titucius,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Bust of Marceus Lioneye,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Chitus' Plum,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Decanter Spiritus,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Deshret's Banner,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Golden Hand,Alll,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Golden Page,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Haliotis Glyph,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Infernal Talc,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Kraityn's Amulet,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Malachai's Entrails,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Malachai's Heart,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Malachai's Lungs,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Maligaro's Spike,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Medicine Chest,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Oak's Amulet,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Ribbon Spool,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Roseus Glyph,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Sewer Keys,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Thaumetic Emblem,All,A0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,The Apex,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,The Eye of Desire,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,The Eye of Fury,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Tolman's Bracelet,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Quest Items,Tower Key,All,0,1,1,1,0,0,32,175 96 37,000 000 000,000 000 000,1,0
+Labyrinth Item,All,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Item,Silver Key,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Item,Golden Key,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Item,Treasure Key,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Trinket,All,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Trinket,Bane of the Loyal,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Trinket,Cogs of Disruption,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Trinket,Cube of Absorption,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Trinket,Heart of the Gargoyle,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Trinket,Orb of Elemental Dispersion,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Trinket,Portal Shredder,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Trinket,Rod of Detonation,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Trinket,Sand of Eternity,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Map Item,All,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Labyrinth Map Item,Offering to the Goddess,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,All,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Sacrifice at Dusk,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Sacrifice at Midnight,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Sacrifice at Dawn,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Sacrifice at Noon,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Mortal Grief,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Mortal Rage,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Mortal Hope,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Mortal Ignorance,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Volkuur's Key,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Eber's Key,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Yriel's Key,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Inya's Key,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Fragment of the Hydra,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Fragment of the Phoenix,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Fragment of the Minotaur,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Map Fragment,Fragment of the Chimera,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,All,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,Small Life Flask,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,Medium Life Flask,All,0,1,3,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,Large Life Flask,All,0,1,6,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,Greater Life Flask,All,0,1,12,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,Grand Life Flask,All,0,1,18,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,Giant Life Flask,All,0,1,24,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,Colossal Life Flask,All,0,1,30,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,Sacred Life Flask,All,0,1,36,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,Hallowed Life Flask,All,0,1,42,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,Sanctified Life Flask,All,0,1,50,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,Divine Life Flask,All,0,1,60,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Life Flask,Eternal Life Flask,All,0,1,65,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,All,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,Small Mana Flask,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,Medium Mana Flask,All,0,1,3,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,Large Mana Flask,All,0,1,6,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,Greater Mana Flask,All,0,1,12,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,Grand Mana Flask,All,0,1,18,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,Giant Mana Flask,All,0,1,24,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,Colossal Mana Flask,All,0,1,30,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,Sacred Mana Flask,All,0,1,36,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,Hallowed Mana Flask,All,0,1,42,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,Sanctified Mana Flask,All,0,1,50,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,Divine Mana Flask,All,0,1,60,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Mana Flask,Eternal Mana Flask,All,0,1,65,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Hybrdid Flask,All,All,0,1,10,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Hybrdid Flask,Small Hybrid Flask,All,0,1,10,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Hybrdid Flask,Medium Hybrid Flask,All,0,1,20,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Hybrdid Flask,Large Hybrid Flask,All,0,1,30,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Hybrdid Flask,Colossal Hybrid Flask,All,0,1,40,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Hybrdid Flask,Sacred Hybrid Flask,All,0,1,50,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Hybrdid Flask,Hallowed Hybrid Flask,All,0,1,60,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,All,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Quicksilver Flask,All,0,1,1,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Bismuth Flask,All,0,1,8,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Stibnite Flask,All,0,1,14,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Amethyst Flask,All,0,1,18,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Ruby Flask,All,0,1,18,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Sapphire Flask,All,0,1,18,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Topaz Flask,All,0,1,18,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Silver Flask,All,0,1,22,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Aquamarine Flask,All,0,1,27,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Granite Flask,All,0,1,27,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Jade Flask,All,0,1,27,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Quartz Flask,All,0,1,27,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Sulphur Flask,All,0,1,35,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Utility Flask,Basalt Flask,All,0,1,40,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Critical Utility Flask,All,All,0,1,27,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
+Critical Utility Flask,Diamond Flask,All,0,1,27,1,0,0,32,200 200 200,000 000 000,000 000 000,1,0
 

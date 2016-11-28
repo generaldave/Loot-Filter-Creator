@@ -18,7 +18,6 @@
 from tkinter   import *      # For GUI
 from tkinter   import font   # For fonts
 from Variables import *      # Variables file
-from BaseTypes import *      # BaseTypes file
 
 #######################################################################
 #                                                                     #
