@@ -2,7 +2,7 @@
 #                                                                      #
 # David Fuller                                                         #
 #                                                                      #
-# MenuBar Class for Path of Exile                                      #
+# MainLeft Class for Path of Exile                                     #
 #                                                                      #
 # Created on 2016-11-27                                                #
 #                                                                      #
@@ -15,31 +15,43 @@
 #                                                                      #
 ########################################################################
 
-from tkinter import *   # For GUI
+from tkinter   import *   # For GUI
+from Variables import *   # Variables file
 
 #######################################################################
 #                                                                     #
-#                            MENUBAR CLASS                            #
+#                           MAINLEFT CLASS                            #
 #                                                                     #
 #######################################################################
 
-class MenuBar(object):
-    def __init__(self, parent, grandparent):
-        self.parent      = parent        # LootFilterCreator
-        self.grandparent = grandparent   # Root
+class MainLeft(object):
+    # Set up GUI
+    def __init__(self, parent):
+        self.parent      = parent
 
-        # Create Menu
-        menubar = Menu(self.grandparent)
-        fileMenu = Menu(menubar, tearoff = False)
-        fileMenu.add_command(label = "New", \
-                             command = self.parent.createFilter)
-        fileMenu.add_separator()
-        fileMenu.add_command(label = "Export", \
-                             command = self.parent.exportFilter)
-        fileMenu.add_separator()
-        fileMenu.add_command(label = "Exit", \
-                             command = self.parent.appClose)
+        # Create leftFrame
+        self.leftFrame = Frame(self.parent)
 
-        # Place Menu
-        menubar.add_cascade(label = "File", menu = fileMenu)
-        self.grandparent.config(menu = menubar)
+        # Create Checkbuttons
+        self.checkButtonsArray = []
+        for i in range(0, len(headings)):
+            self.checkButtonsArray.append(Checkbutton(self.leftFrame, \
+                                          text = headings[i], \
+                                          state = DISABLED))
+
+        # Place Checkbuttons
+        for i in range(1, len(headings)):
+            self.checkButtonsArray[i].pack(anchor = W)
+
+        # Place leftFrame
+        self.leftFrame.pack(side = LEFT, padx = 5)
+
+    # Method clears all check marks
+    def deselectButtons(self):
+        for i in range(1, len(headings)):
+            self.checkButtonsArray[i].deselect()
+
+    # Method checks appropriate box, given an index
+    def selectButton(self, index):
+        self.checkButtonsArray[index].select()
+        

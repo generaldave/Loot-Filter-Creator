@@ -18,6 +18,8 @@
 from tkinter       import *            # For GUI
 from tkinter       import messagebox   # For messagebox
 from MenuBar       import *            # For File Menu
+from MainLeft      import *            # For leftFrame
+from MainRight     import *            # For rightFrame
 from GeneratedText import *            # Loot filter description,
                                        #      headings, etc
 from Variables     import *            # Variables file
@@ -42,101 +44,37 @@ GEOMETRY = "800x850"               # GUI screen size.
 
 class LootFilterCreator(object):
     def __init__(self, parent):
-        # Set up GUI
+        # GUI Attributes
         self.parent = parent
         self.parent.title(TITLE)
         self.parent.geometry(GEOMETRY)
         image = PhotoImage(file = ICON_PATH)   # Icon
         self.parent.tk.call('wm', 'iconphoto', self.parent._w, image)
 
-        # Create File Menu
-        self.parent.fileMenu = MenuBar(self, self.parent)
-
         # Create GUI Frames
-        self.leftFrame    = Frame(parent)
-        self.rightFrame   = Frame(parent)
-        self.previewFrame = Frame(self.rightFrame)
-        self.notesFrame   = Frame(self.rightFrame)
-
-        # Create Left GUI Widgets
-        self.checkButtonsArray = []
-        for i in range(0, len(headings)):
-            self.checkButtonsArray.append(Checkbutton(self.leftFrame, \
-                                          text = headings[i], \
-                                          state = DISABLED))
-
-        # Create Right GUI Widgets
-        self.previewLabel = Label(self.rightFrame, \
-                                  text = "Preview:")
-        self.scrollbar = Scrollbar(self.previewFrame)
-        self.editArea = Text(self.previewFrame, \
-                        width = 80,
-                        height = 29, \
-                        wrap = "word", \
-                        yscrollcommand = self.scrollbar.set, \
-                        borderwidth = 1)
-        self.scrollbar.config(command = self.editArea.yview)
-        self.emptySpace = Button(self.rightFrame, \
-                                 state = "disabled", \
-                                 borderwidth = 0)
-        self.notesLabel = Label(self.rightFrame, \
-                                text = "Notes:")
-        self.scrollbar2 = Scrollbar(self.notesFrame)
-        self.notesArea = Text(self.notesFrame, \
-                        width = 80,
-                        height = 20, \
-                        wrap = "word", \
-                        yscrollcommand = self.scrollbar2.set, \
-                        borderwidth = 1)
-        self.scrollbar2.config(command = self.notesArea.yview)
-
-        # Place GUI Frames
-        self.leftFrame.pack(side = LEFT, padx = 5)
-        self.rightFrame.pack(side = RIGHT, padx = 5)
-
-        # Place Left GUI Widgets
-        for i in range(1, len(headings)):
-            self.checkButtonsArray[i].pack(anchor = W)
-
-        # Place Right GUI Widgets
-        self.previewLabel.pack(side = TOP, anchor = W)
-        self.previewFrame.pack(fill = X)
-        self.scrollbar.pack(side = RIGHT, fill = Y)
-        self.editArea.pack(side = LEFT, fill = BOTH, expand = True)
-        self.emptySpace.pack(fill = X)
-        self.notesLabel.pack(side = TOP, anchor = W)
-        self.notesFrame.pack(fill = X)
-        self.scrollbar2.pack(side = RIGHT, fill = Y)
-        self.notesArea.pack(side = LEFT, fill = BOTH, expand = True)
+        self.parent.fileMenu = MenuBar(self, self.parent)
+        self.leftFrame       = MainLeft(self.parent)
+        self.rightFrame      = MainRight(self.parent)
 
         # Display notes
-        self.notesArea.config(state = "normal")
-        self.notesArea.insert(END, startComment)
-        self.notesArea.config(state = "disabled")
+        self.rightFrame.notesAreaInsert(startComment)
 
     # Method exports filter
     def exportFilter(self):
         # 1.0 = first line character 0. end-1c = end minus return
         # carriage
-        text = self.editArea.get("1.0", 'end-1c')
-        writer = FileHandler(FILTER_NAME)
-        writer.write(text, "")
-
-    # Method appeneds text to editArea
-    def editAreaInsert(self, token):
-        self.editArea.config(state = "normal")
-        self.editArea.insert(END, token + "\n")
-        self.editArea.config(state = "disabled")
+        text = self.rightFrame.editArea.get("1.0", 'end-1c')
+        fileObj = FileHandler(FILTER_NAME)
+        fileObj.write(text, "")
 
     # Method creates filter
     # PRE: dynamic = true or false
     def createFilter(self):
         # Start with a blank preview window
-        self.editArea.delete(1.0, END)
+        self.rightFrame.clearEditArea()
 
         # Uncheck all Class Checkboxes
-        for i in range(1, len(headings)):
-            self.checkButtonsArray[i].deselect()
+        self.leftFrame.deselectButtons()
         
         # Array of Heading objects
         headingsArray = []
@@ -149,7 +87,7 @@ class LootFilterCreator(object):
         description.endDescription()
 
         # Insert description in editArea
-        self.editAreaInsert(description.getText())
+        self.rightFrame.editAreaInsert(description.getText())
 
         # Insert headings and rules in editArea
         for i in range(1, len(headings) - 1):
@@ -167,33 +105,34 @@ class LootFilterCreator(object):
             block = popup.getText()
 
             # Check appropriate box, showing class completion
-            self.checkButtonsArray[i].select()
+            self.leftFrame.selectButton(i)
 
             # Show Filter preview
-            self.editAreaInsert(headingsArray[i].getText())
+            self.rightFrame.editAreaInsert(headingsArray[i].getText())
             for text in block:
-                self.editAreaInsert(text)
+                self.rightFrame.editAreaInsert(text)
 
         # Fail safe Show
         length = len(headings) - 1
         string = str(length) + "." + headings[length]
         showHeading = GeneratedText()
         showHeading.createHeading(string.upper())
-        self.checkButtonsArray[length].select()
-        self.editAreaInsert(showHeading.getText())
-        self.editAreaInsert("Show")    
+        self.leftFrame.selectButton(length)
+        self.rightFrame.editAreaInsert(showHeading.getText())
+        self.rightFrame.editAreaInsert("Show")
+
+    # Method closes app without error
+    def appClose(self):
+        result = messagebox.askyesno("Quit", \
+                                     "Are you sure you want to quit?")
+        if result == True:
+            os._exit(0)
 
 #######################################################################
 #                                                                     #
 #                                DRIVER                               #
 #                                                                     #
 #######################################################################
-
-# Method closes app without error
-def appClose():
-    result = messagebox.askyesno("Quit", "Did you mean to hit X?")
-    if result == True:
-        os._exit(0)
 
 # Define main - app handler
 def main():
@@ -204,7 +143,7 @@ def main():
     creator = LootFilterCreator(root)
 
     # Protocol to handle app close
-    root.protocol("WM_DELETE_WINDOW", appClose)
+    root.protocol("WM_DELETE_WINDOW", creator.appClose)
 
     # Keep app running
     root.mainloop()
